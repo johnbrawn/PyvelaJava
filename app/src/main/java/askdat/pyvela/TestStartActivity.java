@@ -13,5 +13,6 @@ public class TestStartActivity extends android.support.v4.app.FragmentActivity {
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.act_test_start_placeholder, new TestStartFragment())
                 .commit();
+
     }
 }
