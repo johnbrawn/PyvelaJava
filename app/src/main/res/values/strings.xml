@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Pyvela</string>
+
+    <string name="string_sign_up">Sign Up</string>
+    <string name="string_sign_in">Sign In</string>
+    <string name="string_forgot_password">Forgot Password</string>
+    <string name="string_login_hint">Login</string>
+    <string name="string_password_hint">Password</string>
+
+
+    <string name="regEmailText">e-mail</string>
+    <string name="regPhoneNumberText">phone</string>
+    <string name="regIINText">IIN</string>
+    <string name="regPasswordText">Password</string>
+    <string name="regRePasswordText">Re Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

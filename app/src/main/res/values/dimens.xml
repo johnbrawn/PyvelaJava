@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="entranceTextFieldsMargin">50dp</dimen>
+
+    <dimen name="dimen_text_main">15sp</dimen>
+    <dimen name="dimen_text_sub_header">20sp</dimen>
+    <dimen name="dimen_text_header">25sp</dimen>
+</resources>

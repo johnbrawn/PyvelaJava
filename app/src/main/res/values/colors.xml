@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main-->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--Auth and Reg -->
+    <color name="color_auth_primary">#0E4F8A</color>
+    <color name="color_auth_accent">#FFFFFF</color>
+    <color name="color_reg_primary">#0E4F8A</color>
+    <color name="color_reg_accent">#FFFFFF</color>
+
+</resources>
