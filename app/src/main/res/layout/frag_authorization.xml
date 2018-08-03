@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAuthBackground"
+    android:padding="@dimen/entranceTextFieldsMargin">
+    <!-- Text Fields -->
+    <LinearLayout
+        android:id="@+id/auth_fields"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal">
+        <EditText
+            android:id="@+id/auth_login"
+            android:inputType="text"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/authLoginHint"
+            android:textColor="@color/colorAuthEditTextText"
+            android:textColorHint="@color/colorAuthTextEditHint"
+            android:elevation="2dp"
+            android:translationZ="5dp"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
+        <EditText
+            android:id="@+id/auth_password"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/authPasswordHint"
+            android:textColor="@color/colorAuthEditTextText"
+            android:textColorHint="@color/colorAuthTextEditHint"
+            android:elevation="2dp"
+            android:translationZ="5dp"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
+        <Button
+            android:id="@+id/auth_sign_in"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:background="@color/authContrast"
+            android:textColor="@color/colorAuthPrimary"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authSignIn" />
+    </LinearLayout>
+    <!-- auxiliary buttons -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/auth_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingHorizontal="10dp"
+            android:text="@string/authSingUp"
+            android:textColor="@color/authContrast" />
+        <Button
+            android:id="@+id/auth_restore_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingHorizontal="10dp"
+            android:text="@string/authForgotPassword"
+            android:textColor="@color/authContrast" />
+    </LinearLayout>
+    <!-- Logo -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/auth_fields"
+        android:gravity="center"
+        android:layout_marginBottom="50dp">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pyvela_logo" />
+        <TextView
+            android:textColor="@color/authContrast"
+            android:textSize="50sp"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

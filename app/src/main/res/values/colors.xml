@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Main-->
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#2c3e50</color>
+    <color name="colorPrimaryDark">#1B3147</color>
+    <color name="colorAccent">#3498db</color>
 
-    <!--Auth and Reg -->
-    <color name="color_auth_primary">#0E4F8A</color>
-    <color name="color_auth_accent">#FFFFFF</color>
-    <color name="color_reg_primary">#0E4F8A</color>
-    <color name="color_reg_accent">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="silver_lite">#D7DBDD</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="gray">#808080</color>
+    <color name="black">#000000</color>
+
+    <!--Authorization -->
+
+    <color name="colorAuthPrimary">#0E4F8A</color>
+    <color name="colorAuthAccent">#FFFFFF</color>
+
+    <color name="colorAuthBackground">@color/colorAuthPrimary</color>
+    <color name="colorAuthTextEditHint">#91A2BE</color>
+    <color name="colorAuthSignUpText">#2FEFEF</color>
+    <color name="colorAuthForgotPassword">@color/colorAuthSignUpText</color>
+
+    <color name="authContrast">#FFFFFF</color>
+
+
+    <color name="colorAuthEditTextText">@color/colorAuthAccent</color>
+    <color name="colorAuthEditTextBackground">#15538C</color>
+    <color name="colorAuthSignInBackground">@color/authContrast</color>
+    <color name="colorAuthSignInForeground">@color/colorAuthBackground</color>
 
 </resources>

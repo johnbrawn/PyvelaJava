@@ -26,31 +26,31 @@
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/test_answer1"
-                style="@style/TestStartAnswerButton"
+                style="@style/AnswerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </Button>
             <Button
                 android:id="@+id/test_answer2"
-                style="@style/TestStartAnswerButton"
+                style="@style/AnswerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </Button>
             <Button
                 android:id="@+id/test_answer3"
-                style="@style/TestStartAnswerButton"
+                style="@style/AnswerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </Button>
             <Button
                 android:id="@+id/test_answer4"
-                style="@style/TestStartAnswerButton"
+                style="@style/AnswerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </Button>
             <Button
                 android:id="@+id/test_answer5"
-                style="@style/TestStartAnswerButton"
+                style="@style/AnswerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </Button>
