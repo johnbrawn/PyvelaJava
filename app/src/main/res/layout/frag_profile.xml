@@ -6,25 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".main.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></LinearLayout>
 
         <ImageView
             android:id="@+id/frag_profile_image"
-            android:layout_width="wrap_content"
-            android:layout_height="109dp"
-            android:src="@drawable/morning_in_a_pine_forest"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_profile_photo"
+            android:src="@drawable/the_last_day_of_pompeii"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/frag_profile_button"
-            android:text="@string/profile_button"></Button>
+            android:text="@string/profile_button"
+            android:layout_gravity="center" />
     </LinearLayout>
 </FrameLayout>

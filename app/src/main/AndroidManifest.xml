@@ -24,5 +24,4 @@
             android:name=".main.MainActivity"
             android:label="@string/title_activity_act_main"></activity>
     </application>
-
 </manifest>

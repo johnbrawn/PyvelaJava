@@ -32,6 +32,7 @@ public class AuthorizationFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         dataBaseClass =new DataBaseClass();
+        splashActivity = new SplashActivity();
     }
 
     @Override
@@ -45,15 +46,12 @@ public class AuthorizationFragment extends Fragment {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataBaseClass.execute("login="+ login.getText()+"&password="+pass.getText());
-                try {
-                    Log.d(TAG,dataBaseClass.get());
-                    Intent intent = new Intent(getActivity(),MainActivity.class);
+                boolean status = Entry((login.getText()).toString(),(pass.getText()).toString());
+                if (status) {
+                    splashActivity.appPreferences(getActivity());
+                    splashActivity.saveText(true);
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
                     startActivity(intent);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
                 }
                 Toast.makeText(getActivity(),"Cooper,Cooper, two Coopers",Toast.LENGTH_SHORT).show();
             }
@@ -72,5 +70,9 @@ public class AuthorizationFragment extends Fragment {
     public void onAttach(Context context) {
         this.Parent = (EntranceActivity)context;
         super.onAttach(context);
+    }
+    public boolean Entry(String login,String pass){
+        dataBaseClass.execute("login="+ login+"&password="+pass);
+        return true;
     }
 }

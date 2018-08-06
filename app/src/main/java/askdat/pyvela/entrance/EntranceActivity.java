@@ -23,4 +23,6 @@ public class EntranceActivity extends FragmentActivity {
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit();
     }
+
+
 }
