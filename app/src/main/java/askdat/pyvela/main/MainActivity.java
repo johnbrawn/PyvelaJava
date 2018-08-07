@@ -9,29 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import askdat.pyvela.R;
+import askdat.pyvela.main.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ProfileFragment mProfileFragment;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
-            switch (item.getItemId()) {
-                case R.id.navigation_profile:
-                    fragmentTransaction.add(R.id.main_content_fragments_placeholder,new ProfileFragment());
-                    break;
-                case R.id.navigation_home:
-                    break;
-                case R.id.navigation_history:
-                    break;
-            }
-            fragmentTransaction.commit();
-            return false;
-        }
-    };
+    private TestsChooseFragment mTestChooseFragmentq;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +26,32 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_home);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+            switch (item.getItemId()) {
+                case R.id.navigation_profile:
+                    ReplaceFragment(new ProfileFragment());
+                    break;
+                case R.id.navigation_home:
+                    ReplaceFragment(new TestsChooseFragment());
+                    break;
+                case R.id.navigation_history:
+                    break;
+            }
+            fragmentTransaction.commit();
+            return false;
+        }
+    };
+
+
     public void ReplaceFragment(Fragment fragment){
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.main_content_fragments_placeholder,fragment)
+                .replace(R.id.main_placeholder,fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit();
     }
