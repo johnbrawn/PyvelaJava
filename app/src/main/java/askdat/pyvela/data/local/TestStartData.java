@@ -1,13 +1,14 @@
 package askdat.pyvela.data.local;
 
+public class TestStartData{
 
-import askdat.pyvela.data.IExerciseDataSource;
+    private byte UNT_SINGLE = -1;
 
-public class TestStartData implements IExerciseDataSource {
+    private byte UNT_FULL = -2;
 
     private static TestStartData instance;
 
-    protected TestStartData() {
+    private TestStartData() {
 
     }
 
@@ -24,23 +25,4 @@ public class TestStartData implements IExerciseDataSource {
         return null;
     }
 
-
-    @Override
-    public void loadExercises(ILoadExercisesCallback callback) {
-    }
-
-    @Override
-    public void getExercises(IGetExercisesCallback callback) {
-
-    }
-
-    @Override
-    public void addSelectedAnswer(int id) {
-
-    }
-
-    @Override
-    public void complete() {
-
-    }
 }
