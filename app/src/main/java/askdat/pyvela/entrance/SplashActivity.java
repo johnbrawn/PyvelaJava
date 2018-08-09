@@ -11,24 +11,26 @@ import android.os.Handler;
 import android.widget.Toast;
 
 import askdat.pyvela.R;
+import askdat.pyvela.SharedPrefsClass;
 import askdat.pyvela.main.MainActivity;
 
 
 public class SplashActivity extends AppCompatActivity {
+
     private int SPLASH_DISPLAY_LENGTH = 1000;
-    private SharedPreferences sharedPref;
-    Editor editor;
+    private SharedPrefsClass sharedPrefsClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_splash);
-        appPreferences(this);
+        sharedPrefsClass = new SharedPrefsClass();
+        sharedPrefsClass.appPrefs(this);
 
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                if (!sharedPref.getBoolean("bool", false)) {
+                if (!sharedPrefsClass.sharedPrefs.getBoolean("bool", false)) {
                     Intent intent = new Intent(SplashActivity.this, EntranceActivity.class);
                     SplashActivity.this.startActivity(intent);
                     SplashActivity.this.finish();
@@ -41,14 +43,7 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, SPLASH_DISPLAY_LENGTH);
     }
-    public void saveText(boolean status){
-        editor = sharedPref.edit();
-        editor.putBoolean("bool",status);
-        editor.commit();
-    }
-    public void appPreferences(Context context){
-        sharedPref= PreferenceManager.getDefaultSharedPreferences(context);
-    }
+
     @Override
     public void onDestroy(){
         super.onDestroy();

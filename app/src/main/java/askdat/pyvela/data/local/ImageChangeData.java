@@ -3,15 +3,14 @@ package askdat.pyvela.data.local;
 import askdat.pyvela.R;
 
 public final class ImageChangeData {
-    private static volatile ImageChangeData instance;
+    public static volatile ImageChangeData instance;
 
-    public static ImageChangeData getInstance(){
+    public static void getInstance(){
         if (instance==null)
             synchronized (ImageChangeData.class) {
                 if (instance == null)
                     instance = new ImageChangeData();
             }
-        return instance;
     }
 
     public int[] Images;

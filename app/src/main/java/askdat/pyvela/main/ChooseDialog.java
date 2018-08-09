@@ -43,12 +43,9 @@ public class ChooseDialog extends DialogFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String[] item=listView.getItemAtPosition(i).toString().split(" ");
-                String asd=item[0];
-                Toast.makeText(getActivity(),asd,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"asd",Toast.LENGTH_SHORT).show();
 
                 dismiss();
-
-
             }
         });
 

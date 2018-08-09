@@ -12,6 +12,9 @@ import java.net.URL;
 import org.json.*;
 
 public class DataBaseClass extends AsyncTask<String, Integer, String>{
+
+    public static String ARG_AUTH = "auth";
+
     private static final String TAG = "myLogs";
     protected String doInBackground(String... urls){
         HttpURLConnection connection = null;

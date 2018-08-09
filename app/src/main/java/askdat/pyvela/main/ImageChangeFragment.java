@@ -10,14 +10,16 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import askdat.pyvela.R;
+import askdat.pyvela.SharedPrefsClass;
 import askdat.pyvela.data.local.ImageChangeData;
 
 
 public class ImageChangeFragment extends Fragment {
 
-    private GridView gridView;
+    private SharedPrefsClass sharedPrefsClass;
 
     public ImageChangeFragment() {
         // Required empty public constructor
@@ -26,19 +28,37 @@ public class ImageChangeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPrefsClass = new SharedPrefsClass();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.frag_image_change, container, false);
-        gridView  = root.findViewById(R.id.image_change_gridview);
+        GridView gridView = root.findViewById(R.id.image_change_gridview);
         gridView.setAdapter(new ImageChangeAdapter(getActivity()));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                sharedPrefsClass.appPrefs(getActivity());
+                switch (position){
+                    case 0:
+                        sharedPrefsClass.saveInt("change_photo",0);
+                        break;
+                    case 1:
+                        sharedPrefsClass.saveInt("change_photo",1);
+                        break;
+                    case 2:
+                        sharedPrefsClass.saveInt("change_photo",2);
+                        break;
+                    case 3:
+                        sharedPrefsClass.saveInt("change_photo",3);
+                        break;
+                    case 4:
+                        sharedPrefsClass.saveInt("change_photo",4);
+                        break;
+                }
             }
         });
 
@@ -69,7 +89,7 @@ public class ImageChangeFragment extends Fragment {
         // create a new ImageView for each item referenced by the Adapter
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView imageView;
-            int[] images=ImageChangeData.getInstance().Images;
+            int[] images=ImageChangeData.instance.Images;
 
             if (convertView == null) {
                 // if it's not recycled, initialize some attributes

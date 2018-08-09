@@ -35,8 +35,6 @@ public class UNT_FULL extends Fragment{
                 ftrans = getFragmentManager().beginTransaction();
                 dialog.show(getFragmentManager(),"asd");
                 Toast.makeText(getActivity(),"Asdad",Toast.LENGTH_SHORT).show();
-
-
             }
         });
         return root;

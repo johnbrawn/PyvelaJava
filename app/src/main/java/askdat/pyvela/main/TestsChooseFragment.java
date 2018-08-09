@@ -1,5 +1,6 @@
 package askdat.pyvela.main;
 
+import android.Manifest;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,7 +22,7 @@ import askdat.pyvela.teststart.TestStartActivity;
 public class TestsChooseFragment extends Fragment {
 
     private GridView gridView;
-
+    private MainActivity parent;
     private GridViewAdapter adapter;
 
     public static TestsChooseFragment newInstance() {
@@ -29,6 +30,11 @@ public class TestsChooseFragment extends Fragment {
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
+    }
+    @Override
+    public void onAttach(Context context) {
+        parent = (MainActivity)context;
+        super.onAttach(context);
     }
 
     @Override
@@ -44,7 +50,7 @@ public class TestsChooseFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                parent.ReplaceFragment(new UNT_FULL());
 
 
 
@@ -101,6 +107,7 @@ public class TestsChooseFragment extends Fragment {
 
             imageView.setImageResource(mData[i].getImage());
             textView.setText(mData[i].getTitle());
+
 
             return view;
         }
