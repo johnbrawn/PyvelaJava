@@ -4,20 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-
-import java.util.concurrent.ExecutionException;
-
 import askdat.pyvela.R;
 import askdat.pyvela.data.remote.DataBaseClass;
 import askdat.pyvela.main.MainActivity;
+import askdat.pyvela.main.RegistrationFragment;
 
 public class AuthorizationFragment extends Fragment {
     private static final String TAG = "myLogs";
@@ -33,6 +30,7 @@ public class AuthorizationFragment extends Fragment {
         super.onCreate(savedInstanceState);
         dataBaseClass =new DataBaseClass();
         splashActivity = new SplashActivity();
+        Parent = new EntranceActivity();
     }
 
     @Override
@@ -59,6 +57,7 @@ public class AuthorizationFragment extends Fragment {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Parent.ReplaceFragment(new RegistrationFragment());
                 Toast.makeText(getActivity(),"Cooper,Cooper, two Coopers",Toast.LENGTH_SHORT).show();
             }
         });

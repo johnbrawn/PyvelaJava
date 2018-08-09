@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_profile:
-                    ReplaceFragment(new ProfileFragment());
+                    ReplaceFragment(new RegistrationFragment());
                     break;
                 case R.id.navigation_home:
                     ReplaceFragment(new TestsChooseFragment());

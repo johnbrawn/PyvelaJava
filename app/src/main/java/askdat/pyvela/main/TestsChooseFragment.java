@@ -1,9 +1,9 @@
 package askdat.pyvela.main;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 import askdat.pyvela.R;
 import askdat.pyvela.teststart.TestStartActivity;
@@ -43,8 +44,12 @@ public class TestsChooseFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getActivity(), TestStartActivity.class);
-                startActivity(intent);
+
+
+
+
+                //                Intent intent = new Intent(getActivity(), TestStartActivity.class);
+//                startActivity(intent);
             }
         });
         return root;
