@@ -47,7 +47,7 @@ public class ChooseDialog extends DialogFragment {
                 Toast.makeText(getActivity(),asd,Toast.LENGTH_SHORT).show();
 
                 dismiss();
-                full.subject4.setText("asd");
+
 
             }
         });
