@@ -26,6 +26,6 @@
         <activity
             android:name=".main.MainActivity"
             android:label="@string/title_activity_act_main"/>
-        <activity android:name=".teststart.TestStartActivity" />
+        <activity android:name=".tests.teststart.TestStartActivity" />
     </application>
 </manifest>

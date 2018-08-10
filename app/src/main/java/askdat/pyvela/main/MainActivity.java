@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import askdat.pyvela.R;
 import askdat.pyvela.entrance.EntranceActivity;
 import askdat.pyvela.entrance.SplashActivity;
+import askdat.pyvela.tests.testhistory.TestsHistoryFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.replace(R.id.main_content_fragments_placeholder,new TestsChooseFragment());
                     break;
                 case R.id.navigation_history:
+                    ReplaceFragment(new TestsHistoryFragment());
                     break;
             }
             fragmentTransaction.commit();

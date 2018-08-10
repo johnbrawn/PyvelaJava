@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <Spinner
+        android:id="@+id/test_start_spinner"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Spinner>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/test_start_pager"
         android:layout_width="match_parent"

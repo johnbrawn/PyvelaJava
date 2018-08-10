@@ -1,10 +1,9 @@
-package askdat.pyvela.data.local;
+package askdat.pyvela.data.remote;
+
+import askdat.pyvela.data.local.UntTest.Subject;
+import askdat.pyvela.data.local.UntTest;
 
 public class TestStartData{
-
-    private byte UNT_SINGLE = -1;
-
-    private byte UNT_FULL = -2;
 
     private static TestStartData instance;
 
@@ -23,6 +22,14 @@ public class TestStartData{
             }
         }
         return null;
+    }
+
+    public void loadUntFull() {
+
+    }
+
+    public void loadUntSingle(Subject subject1, Subject subject2) {
+
     }
 
 }

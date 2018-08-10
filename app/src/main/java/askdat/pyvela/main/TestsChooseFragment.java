@@ -2,6 +2,7 @@ package askdat.pyvela.main;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 
 
 import askdat.pyvela.R;
-import askdat.pyvela.teststart.TestStartActivity;
+import askdat.pyvela.tests.teststart.TestStartActivity;
 
 
 public class TestsChooseFragment extends Fragment {
@@ -50,12 +51,8 @@ public class TestsChooseFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                parent.ReplaceFragment(new UNT_FULL());
-
-
-
-                //                Intent intent = new Intent(getActivity(), TestStartActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getActivity(), TestStartActivity.class);
+                startActivity(intent);
             }
         });
         return root;
@@ -66,7 +63,7 @@ public class TestsChooseFragment extends Fragment {
                 new GridCell(R.drawable.ic_book, "UNT"),
                 new GridCell(R.drawable.ic_books, "UNT FULL"),
                 new GridCell(R.drawable.ic_book, "EAEA"),
-                new GridCell(R.drawable.ic_books, "EAEA FULL"),
+                new GridCell(R.drawable.ic_books, "EAEA FULL")
         };
     }
 

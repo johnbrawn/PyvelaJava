@@ -1,4 +1,4 @@
-package askdat.pyvela.teststart;
+package askdat.pyvela.tests.teststart;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import askdat.pyvela.R;
-import askdat.pyvela.data.local.TestStartData;
+import askdat.pyvela.data.remote.TestStartData;
 
 public class ExerciseFragment extends Fragment{
 
@@ -60,6 +60,8 @@ public class ExerciseFragment extends Fragment{
 
         LinearLayout answersLayout = root.findViewById(R.id.test_start_answers);
 
+
+
         //Create and add Answer buttons
         for (int i = 0; i < 5; i++) {
             Button answer = getAnswerView();
@@ -79,7 +81,16 @@ public class ExerciseFragment extends Fragment{
 
     private Button getAnswerView() {
 
-        return (Button)getLayoutInflater().inflate(R.layout.answer, null);
+        Button button = (Button)getLayoutInflater().inflate(R.layout.temp_answer, null);
+        float scale = getResources().getDisplayMetrics().density;
+
+        int dp = (int) (5*scale + 0.5f);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                                                    LinearLayout.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(dp, dp, dp, dp);
+        button.setLayoutParams(lp);
+
+        return button;
     }
 
     private View.OnClickListener OnAnswerClick = new View.OnClickListener() {
