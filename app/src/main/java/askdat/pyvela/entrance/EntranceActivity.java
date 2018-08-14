@@ -10,7 +10,7 @@ import askdat.pyvela.R;
 
 public class EntranceActivity extends FragmentActivity {
 
-    private boolean twice=false;
+    private boolean twice = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

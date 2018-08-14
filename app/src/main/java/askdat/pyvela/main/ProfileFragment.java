@@ -26,13 +26,14 @@ public class  ProfileFragment extends Fragment {
 
     private ImageView profileImage;
     private MainActivity Parent;
-    private Button exit;
     private SharedPrefsClass sharedPrefsClass;
     private DialogFragment dialogFragment;
     private TextView textView;
+    private Bundle bundle;
 
     @Override
     public void onAttach(Context context) {
+        Log.d("NUrlan","onCreateV");
         this.Parent = (MainActivity)context;
         super.onAttach(context);
     }
@@ -43,6 +44,7 @@ public class  ProfileFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d("NUrlan","onCreate");
         super.onCreate(savedInstanceState);
         ImageChangeData.getInstance();
         sharedPrefsClass = new SharedPrefsClass();
@@ -52,35 +54,30 @@ public class  ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
+        Log.d("NUrlan","onCreateView");
+
         View root=inflater.inflate(R.layout.frag_profile,container,false);
         profileImage = root.findViewById(R.id.frag_profile_image);
-        exit = root.findViewById(R.id.frag_profile_button);
         textView = root.findViewById(R.id.frag_profile_name);
-
 
         sharedPrefsClass.appPrefs(getActivity());
         int images_id = sharedPrefsClass.sharedPrefs.getInt("change_photo",0);
+        String name = sharedPrefsClass.sharedPrefs.getString("name","Change");
+
+        textView.setText(name);
 
         int[] images = ImageChangeData.instance.Images;
         profileImage.setImageResource(images[images_id]);
 
+        //Change Photo
         profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Parent.ReplaceFragment(new ImageChangeFragment());
+                Parent.ReplaceFragment(new ImageChangeFragment(),"ImageChangeFragment");
             }
         });
 
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sharedPrefsClass.appPrefs(getActivity());
-                sharedPrefsClass.saveBool("bool",false);
-                Intent intent = new Intent(getActivity(),EntranceActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        //Change name
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -52,6 +52,7 @@ public class AuthorizationFragment extends Fragment {
                     sharedPrefsClass.appPrefs(getActivity());
                     sharedPrefsClass.saveBool("bool",true);
                     Intent intent = new Intent(getActivity(), MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
                 Toast.makeText(getActivity(),"Cooper,Cooper, two Coopers",Toast.LENGTH_SHORT).show();

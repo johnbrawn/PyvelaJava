@@ -3,6 +3,7 @@ package askdat.pyvela;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import java.util.Map;
 
 public class SharedPrefsClass {
     public SharedPreferences sharedPrefs;
@@ -10,6 +11,10 @@ public class SharedPrefsClass {
 
     public void appPrefs(Context context){
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+    }
+    public Map getaLl(Context context){
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPrefs.getAll();
     }
     public void saveInt(String key, int value){
         editor = sharedPrefs.edit();

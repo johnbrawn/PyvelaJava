@@ -21,8 +21,6 @@ import askdat.pyvela.SharedPrefsClass;
 
 public class ChangeNameDialogFragment extends DialogFragment {
 
-    public SharedPreferences sharedPrefs;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +30,13 @@ public class ChangeNameDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getDialog().setTitle("vbnm");
+
         final SharedPrefsClass sharedPrefsClass = new SharedPrefsClass();
-        View root = inflater.inflate(R.layout.dialog_profile_change_name,container,false);
+        View root = inflater.inflate(R.layout.dialog_profile_change_name, container, false);
         final EditText name = root.findViewById(R.id.change_name);
         final EditText surname = root.findViewById(R.id.change_surname);
         Button save = root.findViewById(R.id.save);
-        Button cancel = root.findViewById(R.id.cancel);
+        final Button cancel = root.findViewById(R.id.cancel);
 
         sharedPrefsClass.appPrefs(getActivity());
 
@@ -52,7 +50,7 @@ public class ChangeNameDialogFragment extends DialogFragment {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sharedPrefsClass.saveStr("name",(name.getText()).toString()+(surname.getText()).toString());
+                sharedPrefsClass.saveStr("name", (name.getText()).toString() + (surname.getText()).toString());
                 dismiss();
             }
         });

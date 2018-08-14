@@ -1,5 +1,7 @@
 package askdat.pyvela.entrance;
 
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -37,6 +39,10 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    TaskStackBuilder stackBuilder = TaskStackBuilder.create(SplashActivity.this);
+                    stackBuilder.addNextIntentWithParentStack(intent);
+                    PendingIntent pendingIntent = stackBuilder.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
+
                     startActivity(intent);
                     Toast.makeText(SplashActivity.this, "Cooper,Cooper, two Coopers", Toast.LENGTH_SHORT).show();
                 }
