@@ -20,9 +20,16 @@ import askdat.pyvela.data.local.ImageChangeData;
 public class ImageChangeFragment extends Fragment {
 
     private SharedPrefsClass sharedPrefsClass;
+    private MainActivity Parent;
 
     public ImageChangeFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onAttach(Context context){
+        this.Parent = (MainActivity)context;
+        super.onAttach(context);
     }
 
     @Override
@@ -59,6 +66,7 @@ public class ImageChangeFragment extends Fragment {
                         sharedPrefsClass.saveInt("change_photo",4);
                         break;
                 }
+                Parent.onBackPressed();
             }
         });
 

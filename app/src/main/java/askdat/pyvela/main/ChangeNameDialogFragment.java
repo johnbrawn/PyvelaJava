@@ -21,6 +21,12 @@ import askdat.pyvela.SharedPrefsClass;
 
 public class ChangeNameDialogFragment extends DialogFragment {
 
+    public interface onChangeName{
+        void onChange(String name,String surname);
+    }
+
+    onChangeName mOnChangeName;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +56,8 @@ public class ChangeNameDialogFragment extends DialogFragment {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sharedPrefsClass.saveStr("name", (name.getText()).toString() + (surname.getText()).toString());
+                mOnChangeName.onChange((name.getText()).toString(),(surname.getText()).toString());
+                sharedPrefsClass.saveStr("name", (name.getText()).toString() + ' ' + (surname.getText()).toString());
                 dismiss();
             }
         });
@@ -61,5 +68,11 @@ public class ChangeNameDialogFragment extends DialogFragment {
     @Override
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        mOnChangeName = (onChangeName)getTargetFragment();
+        super.onAttach(context);
     }
 }

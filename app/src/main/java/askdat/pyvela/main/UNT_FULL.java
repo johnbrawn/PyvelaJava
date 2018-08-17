@@ -16,13 +16,17 @@ import askdat.pyvela.R;
 public class UNT_FULL extends Fragment{
 
     ChooseDialog  dialog;
+
     FragmentTransaction ftrans;
+
     public TextView subject4;
-   public TextView subject5;
+
+    public TextView subject5;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
+        
         View root =inflater.inflate(R.layout.unt_full,parent,false);
-
 
         subject4=(TextView)root.findViewById(R.id.textView4);
         subject5=(TextView)root.findViewById(R.id.textView5);
@@ -38,6 +42,5 @@ public class UNT_FULL extends Fragment{
             }
         });
         return root;
-
     }
 }

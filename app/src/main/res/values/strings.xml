@@ -22,8 +22,8 @@
     <string name="authLoginHint">Login</string>
     <string name="authPasswordHint">Password</string>
 
-    <string name="authSingUp">Sign Up</string>
-    <string name="authForgotPassword">Forgot Password</string>
+    <string name="authSingUp">SIGN UP</string>
+    <string name="authForgotPassword">FORGOT \nPASSWORD</string>
 
     <string name="authSignIn">Sign In</string>
 

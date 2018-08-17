@@ -24,7 +24,7 @@ public class AuthorizationFragment extends Fragment {
     private static final String TAG = "myLogs";
     private EntranceActivity Parent;
     private boolean check;
-    private Button signIn, signUp;
+    private Button signIn, signUp,forgot;
     private EditText login, pass;
     private DataBaseClass dataBaseClass;
     private SharedPrefsClass sharedPrefsClass;
@@ -43,6 +43,7 @@ public class AuthorizationFragment extends Fragment {
         signUp = root.findViewById(R.id.auth_sign_up);
         login = root.findViewById(R.id.auth_login);
         pass = root.findViewById(R.id.auth_password);
+        forgot = root.findViewById(R.id.auth_restore_password);
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
