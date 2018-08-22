@@ -18,36 +18,41 @@ public class EntranceActivity extends FragmentActivity {
         setContentView(R.layout.act_entrance);
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.entrance_fragment_placeholder, new AuthorizationFragment())
+                .add(R.id.entrance_fragment_placeholder, new AuthorizationFragment(),"AuthorizationFragment")
+                .addToBackStack(null)
                 .commit();
 
     }
-    public void ReplaceFragment(Fragment fragment){
+    public void ReplaceFragment(Fragment fragment, String tag){
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.entrance_fragment_placeholder,fragment)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.entrance_fragment_placeholder, fragment, tag)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null)
                 .commit();
     }
     @Override
     public void onBackPressed(){
-        if (twice)
-        {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-            System.exit(0);
-        }
-
-        twice=true;
-        Toast.makeText(this, "Please press BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed( new Runnable() {
-            @Override
-            public void run(){
-                twice=false;
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag("RegistrationFragment");
+        if (fragment !=null && fragment.isVisible())
+            super.onBackPressed();
+        else {
+            if (twice) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+                System.exit(0);
             }
-        },2000);
+
+            twice = true;
+            Toast.makeText(this, "Please press BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    twice = false;
+                }
+            }, 2000);
+        }
     }
 }

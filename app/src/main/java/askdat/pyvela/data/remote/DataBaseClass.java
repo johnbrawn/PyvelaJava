@@ -20,8 +20,8 @@ public class DataBaseClass extends AsyncTask<String, Integer, String>{
         HttpURLConnection connection = null;
 
         try {
-            String targetURL = "http://abuka.pythonanywhere.com/auth";
             String urlParameters = urls[0];
+            String targetURL = "http://185.111.107.111/api/" + urls[1] + ".php";
             URL url = new URL(targetURL);
 
             //Open connection
@@ -50,6 +50,7 @@ public class DataBaseClass extends AsyncTask<String, Integer, String>{
             }
             rd.close();
             JSONObject obj = new JSONObject(response.toString());
+            Log.d("ASDF",obj.toString());
             String pageName = obj.getString("status");
             return pageName;
         } catch (Exception e) {

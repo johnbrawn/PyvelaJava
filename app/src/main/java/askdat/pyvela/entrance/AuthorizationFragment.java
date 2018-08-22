@@ -23,7 +23,6 @@ import askdat.pyvela.main.MainActivity;
 public class AuthorizationFragment extends Fragment {
     private static final String TAG = "myLogs";
     private EntranceActivity Parent;
-    private boolean check;
     private Button signIn, signUp,forgot;
     private EditText login, pass;
     private DataBaseClass dataBaseClass;
@@ -32,7 +31,6 @@ public class AuthorizationFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dataBaseClass =new DataBaseClass();
         sharedPrefsClass = new SharedPrefsClass();
     }
 
@@ -48,21 +46,21 @@ public class AuthorizationFragment extends Fragment {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean status = Entry((login.getText()).toString(),(pass.getText()).toString());
-                if (status) {
+                String status = Entry((login.getText()).toString(),(pass.getText()).toString());
+                if (status.equals("true") && login.getText().length() !=0 && pass.getText().length() != 0) {
                     sharedPrefsClass.appPrefs(getActivity());
                     sharedPrefsClass.saveBool("bool",true);
                     Intent intent = new Intent(getActivity(), MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
-                Toast.makeText(getActivity(),"Cooper,Cooper, two Coopers",Toast.LENGTH_SHORT).show();
+                else if (status.equals("false"))
+                    Toast.makeText(getActivity(),"Cooper,Cooper, two Coopers",Toast.LENGTH_SHORT).show();
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Parent.ReplaceFragment(new RegistrationFragment());
+                Parent.ReplaceFragment(new RegistrationFragment(),"RegistrationFragment");
             }
         });
 
@@ -74,8 +72,18 @@ public class AuthorizationFragment extends Fragment {
         this.Parent = (EntranceActivity)context;
         super.onAttach(context);
     }
-    public boolean Entry(String login,String pass){
-        dataBaseClass.execute("login="+ login+"&password="+pass);
-        return true;
+    public String Entry(String login,String pass){
+        dataBaseClass =new DataBaseClass();
+        try {
+            dataBaseClass.execute("login=" + login + "&password=" + pass, "login");
+            return dataBaseClass.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+        return "false";
     }
 }

@@ -15,7 +15,6 @@ import java.util.concurrent.ExecutionException;
 
 import askdat.pyvela.R;
 import askdat.pyvela.data.remote.DataBaseClass;
-import askdat.pyvela.entrance.EntranceActivity;
 import askdat.pyvela.main.MainActivity;
 
 public class RegistrationFragment extends Fragment {
@@ -29,7 +28,6 @@ public class RegistrationFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dataBaseClass = new DataBaseClass();
         entranceActivity = new EntranceActivity();
     }
 
@@ -53,7 +51,6 @@ public class RegistrationFragment extends Fragment {
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            boolean status = RegistrationEntry((email.getText()).toString(), (email.getText()).toString());
             if (email.length() == 0 || password1.length() == 0 || password2.length() == 0) {
                 Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
             } else if (!isValidEmailAddress(email.getText().toString())) {
@@ -62,8 +59,13 @@ public class RegistrationFragment extends Fragment {
                 Toast.makeText(getActivity(), "3", Toast.LENGTH_SHORT).show();
             }
             else {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                String status = RegisterUser(email.getText().toString(),password1.getText().toString());
+                if (status.equals("true")){
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+                }
+                else
+                    Toast.makeText(getActivity(),"ERROR",Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -75,16 +77,17 @@ public class RegistrationFragment extends Fragment {
         return m.matches();
     }
 
-    public boolean RegistrationEntry(String login, String pass) {
+    public String RegisterUser(String login, String pass) {
+        dataBaseClass = new DataBaseClass();
         try {
-            dataBaseClass.execute("login=" + login + "&password=" + pass);
-            dataBaseClass.get();
+            dataBaseClass.execute("login=" + login + "&password=" + pass,"register");
+            return dataBaseClass.get();
         } catch (InterruptedException | IllegalStateException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        return true;
+        return "false";
     }
     @Override
     public void onAttach(Context context) {
