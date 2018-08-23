@@ -60,7 +60,7 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
 
         sharedPrefsClass.appPrefs(getActivity());
         int images_id = sharedPrefsClass.sharedPrefs.getInt("change_photo",0);
-        String fullname = sharedPrefsClass.sharedPrefs.getString("name","Change");
+        String fullname = sharedPrefsClass.sharedPrefs.getString("name","Change Name");
         String[] split = fullname.split(" ");
         name.setText(split[0]);
         surname.setText(split[1]);

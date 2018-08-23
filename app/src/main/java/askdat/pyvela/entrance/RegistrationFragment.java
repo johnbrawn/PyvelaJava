@@ -34,7 +34,7 @@ public class RegistrationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View root = inflater.inflate(R.layout.registration, container, false);
+        View root = inflater.inflate(R.layout.frag_registration, container, false);
 
         email = (EditText) root.findViewById(R.id.email);
         password1 = (EditText) root.findViewById(R.id.Password1);

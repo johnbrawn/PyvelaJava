@@ -28,8 +28,8 @@ public class TestsHistoryFragment extends Fragment {
         listView = root.findViewById(R.id.tests_history_list);
 
         TestInfo[] data = new TestInfo[] {
-                new TestInfo("UNT FULL", 92),
-                new TestInfo("UNT FULL", 99),
+                new TestInfo("Mathematics", 92),
+                new TestInfo("Physics", 99),
                 new TestInfo("UNT MATH", 21),
                 new TestInfo("UNT PHYSICS", 18),
                 new TestInfo("UNT PHYSICS", 18),

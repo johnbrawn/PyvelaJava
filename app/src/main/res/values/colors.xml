@@ -9,6 +9,7 @@
     <color name="silver">#C0C0C0</color>
     <color name="gray">#808080</color>
     <color name="black">#000000</color>
+    <color name="transparent_white_45">#73ffffff</color>
 
     <!--Authorization -->
 

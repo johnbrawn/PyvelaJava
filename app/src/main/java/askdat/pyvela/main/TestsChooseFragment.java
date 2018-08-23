@@ -1,11 +1,8 @@
 package askdat.pyvela.main;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +14,6 @@ import android.widget.TextView;
 
 
 import askdat.pyvela.R;
-import askdat.pyvela.tests.teststart.TestStartActivity;
 
 
 public class TestsChooseFragment extends Fragment {
@@ -26,8 +22,10 @@ public class TestsChooseFragment extends Fragment {
     private MainActivity parent;
     private GridViewAdapter adapter;
 
+
     public static TestsChooseFragment newInstance() {
         TestsChooseFragment fragment = new TestsChooseFragment();
+
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -35,6 +33,7 @@ public class TestsChooseFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         parent = (MainActivity)context;
+
         super.onAttach(context);
     }
 
@@ -51,8 +50,14 @@ public class TestsChooseFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getActivity(), TestStartActivity.class);
-                startActivity(intent);
+                if (i==0){
+                  parent.ReplaceFragment(new BySubjectFragment(), "asdasd");
+                }
+                else if (i==1){
+               parent.ReplaceFragment(new UntFullSelectFragment(),"Unt_Full_Show");}
+
+//                Intent intent = new Intent(getActivity(), TestStartActivity.class);
+//                startActivity(intent);
             }
         });
         return root;

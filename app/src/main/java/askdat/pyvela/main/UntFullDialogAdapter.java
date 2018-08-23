@@ -1,5 +1,4 @@
 package askdat.pyvela.main;
-import android.app.ActionBar;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,17 +8,17 @@ import android.widget.TextView;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 import askdat.pyvela.R;
 
-public class ListViewAdapter extends ArrayAdapter {
+public class UntFullDialogAdapter extends ArrayAdapter {
 
     LayoutInflater inflater;
-    ArrayList<ContainerListView> Data;
+    ArrayList<UntFullContainer> Data;
     int Resources;
 
-    public ListViewAdapter (Context context, int resources, ArrayList<ContainerListView> data) {
+    public UntFullDialogAdapter(Context context, int resources, ArrayList<UntFullContainer> data) {
+
         super(context, resources, data);
 
         this.inflater = LayoutInflater.from(context);
@@ -28,12 +27,14 @@ public class ListViewAdapter extends ArrayAdapter {
     }
     @Override
     public View getView(int position, View conteiner, ViewGroup parent){
-        View root = inflater.inflate(R.layout.text_listview, parent, false);
-        TextView texts =(TextView)root.findViewById(R.id.textwithlist);
 
-        ContainerListView subjects=Data.get(position);
-        texts.setText(subjects.getText());
+        View root = inflater.inflate(R.layout.unt_full_dialog_data, parent, false);
+        TextView texts1 = (TextView) root.findViewById(R.id.textwithlist1);
+        TextView texts2 = (TextView) root.findViewById(R.id.textwithlist2);
 
+        UntFullContainer subjects=Data.get(position);
+        texts1.setText(subjects.getText1());
+        texts2.setText(subjects.getText2());
 
         return root;
     }

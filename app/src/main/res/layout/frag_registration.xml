@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/registration">
+    <!-- Text Fields -->
+    <LinearLayout
+        android:id="@+id/reg_fields"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#C20D7272"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="53sp"
+            android:layout_marginStart="53sp"
+            android:layout_marginTop="160dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/authLoginHint"
+            android:inputType="text"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColorHint="#AAAAAA" />
+
+        <EditText
+            android:id="@+id/Password1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="53sp"
+            android:layout_marginStart="53sp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/authPasswordHint"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:layout_marginBottom="12dp"
+            android:textColorHint="#AAAAAA" />
+
+        <EditText
+            android:id="@+id/Password2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="53sp"
+            android:layout_marginStart="53sp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/regRePasswordText"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:textColorHint="#AAAAAA">
+        </EditText>
+
+        <Button
+            android:id="@+id/SignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="51dp"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="21dp"
+            android:clickable="true"
+            android:text="@string/authSingUp"
+            android:textColor="#0D7272" />
+    </LinearLayout>
+    <!-- Logo -->
+</RelativeLayout>
+

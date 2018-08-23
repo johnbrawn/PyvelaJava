@@ -6,11 +6,11 @@
     android:background="@drawable/bg_entrance">
     <LinearLayout
         android:id="@+id/auth_fields"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#C20D7272"
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
         >
         <EditText
             android:textColorHint="#AAAAAA"
