@@ -1,5 +1,6 @@
 package askdat.pyvela.main;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -36,7 +37,7 @@ public class ChangeNameDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        getDialog().setTitle("Nurlan");
         final SharedPrefsClass sharedPrefsClass = new SharedPrefsClass();
         View root = inflater.inflate(R.layout.dialog_profile_change_name, container, false);
         final EditText name = root.findViewById(R.id.change_name);

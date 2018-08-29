@@ -51,10 +51,10 @@ public class TestsChooseFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i==0){
-                  parent.ReplaceFragment(new BySubjectFragment(), "asdasd");
+                  parent.ReplaceFragment(new BySubjectFragment(), "BySubjectFragment");
                 }
                 else if (i==1){
-               parent.ReplaceFragment(new UntFullSelectFragment(),"Unt_Full_Show");}
+               parent.ReplaceFragment(new UntFullSelectFragment(), "UntFullSelectFragment");}
 
 //                Intent intent = new Intent(getActivity(), TestStartActivity.class);
 //                startActivity(intent);

@@ -83,6 +83,8 @@ public class AuthorizationFragment extends Fragment {
             e.printStackTrace();
         } catch (IllegalStateException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
         return "false";
     }

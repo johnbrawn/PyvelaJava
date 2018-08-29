@@ -101,8 +101,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Fragment fragment = getSupportFragmentManager().findFragmentByTag("ImageChangeFragment");
-        if (fragment != null && fragment.isVisible())
+        Fragment imageChangeFragment = getSupportFragmentManager().findFragmentByTag("ImageChangeFragment");
+        Fragment bySubjectFragment = getSupportFragmentManager().findFragmentByTag("BySubjectFragment");
+
+        if (imageChangeFragment != null && imageChangeFragment.isVisible())
             super.onBackPressed();
         else {
             if (twice) {

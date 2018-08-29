@@ -55,7 +55,7 @@ public class DataBaseClass extends AsyncTask<String, Integer, String>{
             return pageName;
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return "false";
         } finally {
             if (connection != null) {
                 connection.disconnect();

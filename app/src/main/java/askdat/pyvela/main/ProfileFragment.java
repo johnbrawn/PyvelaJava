@@ -27,7 +27,6 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
 
     @Override
     public void onAttach(Context context) {
-        Log.d("NUrlan","onCreateV");
         this.Parent = (MainActivity)context;
         super.onAttach(context);
     }
@@ -38,7 +37,6 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.d("Nurlan","onCreate");
         super.onCreate(savedInstanceState);
         ImageChangeData.getInstance();
         sharedPrefsClass = new SharedPrefsClass();
@@ -47,9 +45,6 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-
-        Log.d("Nurlan","onCreateView");
-
         dialogFragment.setTargetFragment(ProfileFragment.this, 1);
 
         View root=inflater.inflate(R.layout.frag_profile,container,false);
@@ -60,13 +55,10 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
 
         sharedPrefsClass.appPrefs(getActivity());
         int images_id = sharedPrefsClass.sharedPrefs.getInt("change_photo",0);
-        String fullname = sharedPrefsClass.sharedPrefs.getString("name","Change Name");
-        String[] split = fullname.split(" ");
+        String fullName = sharedPrefsClass.sharedPrefs.getString("name","Change Name");
+        String[] split = fullName.split(" ");
         name.setText(split[0]);
         surname.setText(split[1]);
-
-
-
 
         int[] images = ImageChangeData.instance.Images;
         profileImage.setImageResource(images[images_id]);
