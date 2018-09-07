@@ -12,7 +12,7 @@ public class SharedPrefsClass {
     public void appPrefs(Context context){
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     }
-    public Map getaLl(Context context){
+    public Map getAll(Context context){
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPrefs.getAll();
     }

@@ -22,8 +22,8 @@
     <string name="authLoginHint">Login</string>
     <string name="authPasswordHint">Password</string>
 
-    <string name="authSingUp">SIGN UP</string>
-    <string name="authForgotPassword">FORGOT \nPASSWORD</string>
+    <string name="authSingUp">Don\'t have an account? Sign up</string>
+    <string name="authForgotPassword">FORGOT YOUR PASSWORD?</string>
 
     <string name="authSignIn">Sign In</string>
 
@@ -32,11 +32,12 @@
     <string name="regIINText">IIN</string>
     <string name="regPasswordText">Password</string>
     <string name="regRePasswordText">Re Password</string>
-    <string name="title_activity_act_main">ActMainActivity</string>
+    <string name="title_activity_act_main">PYVELA</string>
 
     <string name="action_help">Help</string>
     <string name="action_exit">Exit</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="profEdit">Edit</string>
 
 </resources>

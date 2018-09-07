@@ -4,15 +4,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <LinearLayout
         android:id="@+id/profile_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
-
+        android:gravity="center_horizontal"
+        android:background="@drawable/soviet_union"
+        >
+        <!--
         <FrameLayout
             android:layout_width="120dp"
             android:layout_height="120dp"
@@ -32,6 +33,17 @@
                 android:background="@drawable/bg_profile_photo"/>
 
         </FrameLayout>
+        -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/frag_profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/the_last_day_of_pompeii"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"
+            android:clickable="true"
+            android:focusable="true"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,37 +56,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
-                android:textColor="#1F7373"
+                android:textColor="#FFFFFF"
                 android:id="@+id/frag_profile_name"
                 android:layout_gravity="center"/>
-            <TextView
-                android:text="Cumberbatch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textColor="#1F7373"
-                android:id="@+id/frag_profile_surname"/>
         </LinearLayout>
 
         <TextView
-            android:text="Almaty"
+            android:text="Balance:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:clickable="true"
             android:focusable="true"
-            android:textColor="#1F7373"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="10dp"
             android:id="@+id/frag_profile_city"/>
-
     </LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_gravity="center"
+        android:background="#30B2DB"/>
     <GridLayout
         android:id="@+id/profile_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:background="@drawable/bg_profile_informer"
-        android:columnCount="4"
+        android:columnCount="3"
         android:paddingBottom="10dp"
         android:paddingEnd="20dp"
         android:paddingStart="20dp"
@@ -86,9 +94,10 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="center"
-            android:text="300"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/text_size_main_light" />
+            android:text="125"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_main_light"
+            android:background="@drawable/bg_textview_profile"/>
 
         <TextView
             android:layout_width="0dp"
@@ -97,9 +106,10 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="center"
-            android:text="78"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/text_size_main_light" />
+            android:text="145"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_main_light"
+            android:background="@drawable/bg_textview_profile"/>
 
         <TextView
             android:layout_width="0dp"
@@ -107,18 +117,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="center"
-            android:text="95"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/text_size_main_light" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill_horizontal"
-            android:gravity="center"
-            android:text="99"
-            android:textColor="#FFFFFF"
+            android:text="12"
+            android:textColor="@color/black"
             android:textSize="@dimen/text_size_main_light" />
 
         <TextView
@@ -127,9 +127,10 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="center"
-            android:text="Balance"
-            android:textColor="#1C8282"
-            android:textSize="14sp" />
+            android:text="POINTS"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:background="@drawable/bg_textview_profile"/>
 
         <TextView
             android:layout_width="0dp"
@@ -137,9 +138,10 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="center"
-            android:text="Bonus"
-            android:textColor="#1C8282"
-            android:textSize="14sp" />
+            android:text="MINUTES"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:background="@drawable/bg_textview_profile"/>
 
         <TextView
             android:layout_width="0dp"
@@ -147,24 +149,62 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="center"
-            android:text="Average"
-            android:textColor="#1C8282"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill_horizontal"
-            android:gravity="center"
-            android:text="Maximal"
-            android:textColor="#1C8282"
+            android:text="TESTS"
+            android:textColor="@color/gray"
             android:textSize="14sp" />
     </GridLayout>
-    <Button
-        android:layout_width="wrap_content"
+    <GridLayout
+        android:id="@+id/profile_grid2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:theme="@style/MyButton"
-        style="@style/Widget.AppCompat.Button.Borderless"/>
+        android:background="@drawable/bg_profile_informer"
+        android:columnCount="2"
+        android:paddingBottom="10dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_email"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="luke_apache@mail.ru"
+            android:layout_marginStart="15dp"
+            android:textSize="17sp"
+            android:layout_marginBottom="13dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_phone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="87076203499"
+            android:layout_marginStart="15dp"
+            android:textSize="17sp"
+            android:layout_marginBottom="13dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_contact"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="000512446215"
+            android:layout_marginStart="15dp"
+            android:textSize="17sp"
+            android:layout_marginBottom="13dp"/>
+    </GridLayout>
+    <Button
+        android:id="@+id/frag_edit"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="51dp"
+        android:text="@string/profEdit"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_entrance_rectangle"/>
 </LinearLayout>

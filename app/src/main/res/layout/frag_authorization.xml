@@ -4,87 +4,92 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bg_entrance">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <LinearLayout
         android:id="@+id/auth_fields"
         android:orientation="vertical"
-        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#C20D7272"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_centerInParent="true"
         >
-        <EditText
-            android:textColorHint="#AAAAAA"
-            android:id="@+id/auth_login"
-            android:inputType="text"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_login"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="212dp"
-            android:layout_marginStart="53sp"
-            android:layout_marginEnd="53sp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/edit_text_bg"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp"
-            android:hint="@string/authLoginHint"/>
-        <EditText
-            android:textColorHint="#AAAAAA"
-            android:id="@+id/auth_password"
-            android:inputType="textPassword"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp">
+            <EditText
+                android:textColorHint="#AAAAAA"
+                android:id="@+id/auth_login"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="53sp"
+                android:layout_marginEnd="53sp"
+                android:hint="@string/authLoginHint" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="53sp"
-            android:layout_marginEnd="53sp"
-            android:background="@drawable/edit_text_bg"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp"
-            android:hint="@string/authPasswordHint"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:textColorHint="#AAAAAA"
+                android:id="@+id/auth_password"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="53sp"
+                android:layout_marginEnd="53sp"
+                android:hint="@string/authPasswordHint"/>
+        </android.support.design.widget.TextInputLayout>
         <Button
             android:id="@+id/auth_sign_in"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="51dp"
             android:layout_marginEnd="51dp"
             android:text="@string/authSignIn"
-            android:textColor="#0D7272"/>
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_entrance_rectangle"/>
+        <Button
+            android:textColor="#30B2DB"
+            android:id="@+id/auth_restore_password"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/authForgotPassword"
+            android:textSize="12sp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            />
     </LinearLayout>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:gravity="center">
-            <Button
-                android:textColor="#FFFFFF"
-                android:id="@+id/auth_restore_password"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="@string/authForgotPassword"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                />
-            <View
-                android:layout_marginBottom="5dp"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="#FFFFFF" />
-            <Button
-                android:id="@+id/auth_sign_up"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:textColor="#FFFFFF"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/authSingUp"
-                android:gravity="center"
-                />
-        </LinearLayout>
-
-    <View
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/auth_sign_up"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textColor="#FFFFFF"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/authSingUp"
+            android:gravity="center"
+            />
+    </LinearLayout>
 </RelativeLayout>

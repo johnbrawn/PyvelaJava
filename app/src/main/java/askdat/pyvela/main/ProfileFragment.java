@@ -22,7 +22,7 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
     private MainActivity Parent;
     private SharedPrefsClass sharedPrefsClass;
     private DialogFragment dialogFragment;
-    private TextView name,surname;
+    private TextView name;
     private Bundle bundle;
 
     @Override
@@ -50,15 +50,13 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
         View root=inflater.inflate(R.layout.frag_profile,container,false);
         profileImage = root.findViewById(R.id.frag_profile_image);
         name = root.findViewById(R.id.frag_profile_name);
-        surname = root.findViewById(R.id.frag_profile_surname);
         LinearLayout linearLayout = root.findViewById(R.id.frag_profile_linear);
 
         sharedPrefsClass.appPrefs(getActivity());
         int images_id = sharedPrefsClass.sharedPrefs.getInt("change_photo",0);
         String fullName = sharedPrefsClass.sharedPrefs.getString("name","Change Name");
-        String[] split = fullName.split(" ");
-        name.setText(split[0]);
-        surname.setText(split[1]);
+        //String[] splitFullName = fullName.split(" ");
+        name.setText(fullName);
 
         int[] images = ImageChangeData.instance.Images;
         profileImage.setImageResource(images[images_id]);
@@ -82,8 +80,7 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
     }
 
     @Override
-    public void onChange(String Name, String Surname) {
+    public void onChange(String Name) {
         name.setText(Name);
-        surname.setText(Surname);
     }
 }

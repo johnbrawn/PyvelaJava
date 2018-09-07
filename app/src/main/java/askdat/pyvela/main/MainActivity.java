@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_help) {
-            Map a=sharedPrefsClass.getaLl(this);
+            Map a=sharedPrefsClass.getAll(this);
             Toast.makeText(this,(a).toString(),Toast.LENGTH_SHORT).show();
             return true;
         }

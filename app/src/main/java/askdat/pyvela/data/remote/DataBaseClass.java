@@ -13,9 +13,6 @@ import org.json.*;
 
 public class DataBaseClass extends AsyncTask<String, Integer, String>{
 
-    public static String ARG_AUTH = "auth";
-
-    private static final String TAG = "myLogs";
     protected String doInBackground(String... urls){
         HttpURLConnection connection = null;
 
@@ -40,19 +37,19 @@ public class DataBaseClass extends AsyncTask<String, Integer, String>{
             wr.close();
 
             //Get Response
-            InputStream is = connection.getInputStream();
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+            InputStream inputStream = connection.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             StringBuilder response = new StringBuilder();
             String line;
-            while ((line = rd.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 response.append(line);
                 response.append('\r');
             }
-            rd.close();
+            reader.close();
+            //Parsing JSON
             JSONObject obj = new JSONObject(response.toString());
-            Log.d("ASDF",obj.toString());
-            String pageName = obj.getString("status");
-            return pageName;
+            String status = obj.getString("status");
+            return status;
         } catch (Exception e) {
             e.printStackTrace();
             return "false";

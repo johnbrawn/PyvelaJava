@@ -27,6 +27,7 @@ public class AuthorizationFragment extends Fragment {
     private EditText login, pass;
     private DataBaseClass dataBaseClass;
     private SharedPrefsClass sharedPrefsClass;
+    private ForgotPassDialogFragment dialogFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,9 @@ public class AuthorizationFragment extends Fragment {
         pass = root.findViewById(R.id.auth_password);
         forgot = root.findViewById(R.id.auth_restore_password);
 
+        dialogFragment = new ForgotPassDialogFragment();
+        dialogFragment.setTargetFragment(AuthorizationFragment.this,1);
+
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,13 +58,19 @@ public class AuthorizationFragment extends Fragment {
                     startActivity(intent);
                 }
                 else if (status.equals("false"))
-                    Toast.makeText(getActivity(),"Cooper,Cooper, two Coopers",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Cooper, Cooper, two Coopers",Toast.LENGTH_SHORT).show();
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Parent.ReplaceFragment(new RegistrationFragment(),"RegistrationFragment");
+            }
+        });
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogFragment.show(getFragmentManager(), "ForgotPass");
             }
         });
 
