@@ -460,7 +460,7 @@ instanceKlass org/gradle/api/internal/tasks/TaskResolver
 instanceKlass org/gradle/api/internal/artifacts/ConfigurationResolver
 instanceKlass org/gradle/api/internal/artifacts/transform/ArtifactTransforms
 instanceKlass org/gradle/api/internal/artifacts/GlobalDependencyResolutionRules
-instanceKlass org/gradle/api/internal/artifacts/type/ArtifactTypeRegistry
+instanceKlass org/gradle/api/internal/artifacts/title/ArtifactTypeRegistry
 instanceKlass org/gradle/api/internal/artifacts/BaseRepositoryFactory
 instanceKlass org/gradle/api/internal/artifacts/ivyservice/ivyresolve/parser/MetaDataParser
 instanceKlass org/gradle/api/internal/artifacts/VariantTransformRegistry

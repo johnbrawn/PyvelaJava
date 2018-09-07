@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".tests.testhistory.TestsHistoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <ListView
         android:id="@+id/tests_history_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:dividerHeight="2dp">
     </ListView>
 </FrameLayout>

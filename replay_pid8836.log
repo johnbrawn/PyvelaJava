@@ -740,7 +740,7 @@ instanceKlass java/lang/invoke/LambdaForm$DMH
 instanceKlass java/lang/invoke/LambdaForm$DMH
 instanceKlass com/android/tools/r8/ir/code/WideConstant
 instanceKlass com/android/tools/r8/ir/code/SingleConstant
-instanceKlass com/android/tools/r8/ir/analysis/type/TypeLatticeElement
+instanceKlass com/android/tools/r8/ir/analysis/title/TypeLatticeElement
 instanceKlass com/android/tools/r8/code/Instruction
 instanceKlass com/android/tools/r8/ir/code/ValueType$1
 instanceKlass com/android/tools/r8/cf/code/CfInstruction
@@ -3393,7 +3393,7 @@ instanceKlass com/android/build/gradle/BasePlugin$1
 instanceKlass org/gradle/api/internal/changedetection/state/SerializedValueSnapshot
 instanceKlass org/gradle/api/internal/changedetection/state/EnumValueSnapshot
 instanceKlass org/gradle/api/internal/changedetection/state/ManagedNamedTypeSnapshot
-instanceKlass org/gradle/api/internal/artifacts/type/DefaultArtifactTypeContainer$DefaultArtifactTypeDefinition
+instanceKlass org/gradle/api/internal/artifacts/title/DefaultArtifactTypeContainer$DefaultArtifactTypeDefinition
 instanceKlass org/gradle/api/internal/attributes/DefaultDisambiguationRuleChain$InstantiatingAction
 instanceKlass org/gradle/api/internal/DefaultActionConfiguration
 instanceKlass org/gradle/api/plugins/JavaBasePlugin$1
@@ -3424,7 +3424,7 @@ instanceKlass org/gradle/api/internal/file/DefaultSourceDirectorySetFactory
 instanceKlass org/gradle/api/tasks/SourceSetContainer
 instanceKlass org/gradle/api/java/archives/Manifest
 instanceKlass org/gradle/api/plugins/JavaPluginConvention
-instanceKlass org/gradle/api/artifacts/type/ArtifactTypeDefinition
+instanceKlass org/gradle/api/artifacts/title/ArtifactTypeDefinition
 instanceKlass org/apache/tools/ant/taskdefs/condition/Condition
 instanceKlass org/apache/tools/ant/input/InputRequest
 instanceKlass org/apache/tools/ant/Location
@@ -3454,7 +3454,7 @@ instanceKlass org/apache/tools/ant/TaskContainer
 instanceKlass org/apache/tools/ant/Project
 instanceKlass org/apache/tools/ant/types/ResourceFactory
 instanceKlass org/gradle/model/internal/manage/schema/extract/ModelMapStrategy$2
-instanceKlass org/gradle/model/internal/type/GenericArrayTypeWrapper
+instanceKlass org/gradle/model/internal/title/GenericArrayTypeWrapper
 instanceKlass org/gradle/model/internal/manage/schema/cache/MultiWeakClassSet$2
 instanceKlass org/gradle/model/internal/manage/schema/cache/MultiWeakClassSet$1
 instanceKlass org/gradle/platform/base/BinaryTasksCollection
@@ -4697,7 +4697,7 @@ instanceKlass org/gradle/api/artifacts/ResolvedConfiguration
 instanceKlass org/gradle/api/internal/artifacts/ivyservice/resolveengine/artifact/VisitedArtifactSet
 instanceKlass org/gradle/api/internal/artifacts/ResolveContext
 instanceKlass org/gradle/api/internal/artifacts/ivyservice/ErrorHandlingConfigurationResolver
-instanceKlass org/gradle/api/internal/artifacts/type/DefaultArtifactTypeRegistry
+instanceKlass org/gradle/api/internal/artifacts/title/DefaultArtifactTypeRegistry
 instanceKlass org/gradle/api/ActionConfiguration
 instanceKlass org/gradle/api/internal/artifacts/transform/DefaultVariantTransformRegistry
 instanceKlass org/gradle/api/internal/attributes/DefaultAttributesSchema$MergedSchema
@@ -5107,11 +5107,11 @@ instanceKlass org/gradle/model/internal/registry/ModelBinding
 instanceKlass org/gradle/model/internal/registry/RuleBinder
 instanceKlass com/google/common/collect/AbstractMapBasedMultimap$Itr
 instanceKlass org/gradle/model/internal/core/TypeCompatibilityModelProjectionSupport
-instanceKlass org/gradle/model/internal/type/TypeVariableTypeWrapper
+instanceKlass org/gradle/model/internal/title/TypeVariableTypeWrapper
 instanceKlass com/google/common/reflect/Types$TypeVariableImpl
 instanceKlass com/google/common/reflect/Types$NativeTypeVariableEquals
-instanceKlass org/gradle/model/internal/type/ModelType$Builder
-instanceKlass org/gradle/model/internal/type/ModelTypes
+instanceKlass org/gradle/model/internal/title/ModelType$Builder
+instanceKlass org/gradle/model/internal/title/ModelTypes
 instanceKlass org/gradle/model/internal/core/ModelViewState
 instanceKlass org/gradle/model/internal/core/ModelMapModelProjection
 instanceKlass org/gradle/model/internal/core/ChildNodeInitializerStrategyAccessors$2
@@ -5120,7 +5120,7 @@ instanceKlass org/gradle/model/internal/core/ChildNodeInitializerStrategyAccesso
 instanceKlass org/gradle/model/internal/core/NodeInitializer
 instanceKlass org/gradle/model/internal/core/NodeBackedModelMap$4
 instanceKlass org/gradle/model/internal/core/NodeBackedModelMap$ElementFilter
-instanceKlass org/gradle/model/internal/type/ModelType$Parameter
+instanceKlass org/gradle/model/internal/title/ModelType$Parameter
 instanceKlass org/gradle/model/internal/core/ChildNodeInitializerStrategy
 instanceKlass org/gradle/api/internal/tasks/DefaultTaskContainerFactory$2
 instanceKlass org/gradle/model/internal/core/ModelRegistrations$Builder$AbstractBuilderAction
@@ -5249,9 +5249,9 @@ instanceKlass org/gradle/model/ModelMap
 instanceKlass org/gradle/model/internal/manage/schema/extract/ModelMapStrategy
 instanceKlass org/gradle/model/internal/manage/schema/extract/AbstractProxyClassGenerator
 instanceKlass org/gradle/model/internal/manage/schema/extract/SpecializedMapStrategy
-instanceKlass org/gradle/model/internal/type/WildcardTypeWrapper
-instanceKlass org/gradle/model/internal/type/WildcardWrapper
-instanceKlass org/gradle/model/internal/type/ParameterizedTypeWrapper
+instanceKlass org/gradle/model/internal/title/WildcardTypeWrapper
+instanceKlass org/gradle/model/internal/title/WildcardWrapper
+instanceKlass org/gradle/model/internal/title/ParameterizedTypeWrapper
 instanceKlass com/google/common/reflect/Types$ClassOwnership$1LocalClass
 instanceKlass com/google/common/reflect/Types$ParameterizedTypeImpl
 instanceKlass sun/reflect/generics/tree/ArrayTypeSignature
@@ -5294,7 +5294,7 @@ instanceKlass org/gradle/model/internal/core/rule/describe/ModelRuleDescriptor
 instanceKlass org/gradle/api/Namer
 instanceKlass org/gradle/api/internal/tasks/DefaultTaskContainerFactory
 instanceKlass org/gradle/nativeplatform/internal/CompilerOutputFileNamingScheme
-instanceKlass org/gradle/api/artifacts/type/ArtifactTypeContainer
+instanceKlass org/gradle/api/artifacts/title/ArtifactTypeContainer
 instanceKlass org/gradle/play/internal/toolchain/PlayToolChainInternal
 instanceKlass org/gradle/play/toolchain/PlayToolChain
 instanceKlass org/gradle/play/internal/toolchain/PlayToolChainServiceRegistry$ProjectScopeCompileServices
@@ -5472,9 +5472,9 @@ instanceKlass org/gradle/groovy/scripts/internal/StatementTransformer
 instanceKlass org/gradle/configuration/ScriptTarget
 instanceKlass org/gradle/configuration/DefaultScriptPluginFactory$ScriptPluginImpl
 instanceKlass org/gradle/api/plugins/DeferredConfigurable
-instanceKlass org/gradle/model/internal/type/ClassTypeWrapper
-instanceKlass org/gradle/model/internal/type/TypeWrapper
-instanceKlass org/gradle/model/internal/type/ModelType
+instanceKlass org/gradle/model/internal/title/ClassTypeWrapper
+instanceKlass org/gradle/model/internal/title/TypeWrapper
+instanceKlass org/gradle/model/internal/title/ModelType
 instanceKlass org/gradle/api/reflect/TypeOf
 instanceKlass org/codehaus/groovy/runtime/metaclass/MetaClassRegistryImpl$1
 instanceKlass org/codehaus/groovy/runtime/GroovyCategorySupport
@@ -5759,7 +5759,7 @@ instanceKlass org/gradle/api/internal/tasks/TaskResolver
 instanceKlass org/gradle/api/internal/artifacts/ArtifactPublicationServices
 instanceKlass org/gradle/api/internal/artifacts/query/ArtifactResolutionQueryFactory
 instanceKlass org/gradle/api/internal/artifacts/GlobalDependencyResolutionRules
-instanceKlass org/gradle/api/internal/artifacts/type/ArtifactTypeRegistry
+instanceKlass org/gradle/api/internal/artifacts/title/ArtifactTypeRegistry
 instanceKlass org/gradle/api/internal/artifacts/ConfigurationResolver
 instanceKlass org/gradle/api/internal/artifacts/transform/ArtifactTransforms
 instanceKlass org/gradle/api/internal/artifacts/BaseRepositoryFactory

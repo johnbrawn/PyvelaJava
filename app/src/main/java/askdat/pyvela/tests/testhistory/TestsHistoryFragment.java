@@ -8,49 +8,59 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import askdat.pyvela.tests.testhistory.TestsHistoryContract.Presenter;
 import askdat.pyvela.R;
 
-public class TestsHistoryFragment extends Fragment {
+public class TestsHistoryFragment extends Fragment implements TestsHistoryContract.View{
 
-    ListView listView;
+    ListView mListView;
+    Presenter mPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        mPresenter = new TestsHistoryPresenter(this);
+
         View root =  inflater.inflate(R.layout.frag_tests_history, container, false);
-
-        listView = root.findViewById(R.id.tests_history_list);
-
-        TestInfo[] data = new TestInfo[] {
-                new TestInfo("Mathematics", 92),
-                new TestInfo("Physics", 99),
-                new TestInfo("UNT MATH", 21),
-                new TestInfo("UNT PHYSICS", 18),
-                new TestInfo("UNT PHYSICS", 18),
-                new TestInfo("UNT PHYSICS", 18),
-                new TestInfo("UNT PHYSICS", 18)
-        };
-
-        listView.setAdapter(new TestInfoAdapter(getContext(), R.layout.temp_test_info, data));
+        mListView = root.findViewById(R.id.tests_history_list);
         return root;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mPresenter.OnResume();
+    }
 
-    public static class TestInfoAdapter extends ArrayAdapter<TestInfo> {
+    @Override
+    public void showList(ArrayList<TestInfo> items) {
+        mListView.setAdapter(new TestsInfoAdapter(getContext(), R.layout.temp_test_info, items));
+    }
 
-        private TestInfo[] mData;
+    @Override
+    public void onDestroy() {
+        mPresenter.OnDestroy();
+        super.onDestroy();
+    }
+
+    public static class TestsInfoAdapter extends ArrayAdapter<TestInfo> {
+
+        private ArrayList<TestInfo> mData;
 
         private int mResource;
 
         private LayoutInflater inflater;
 
-        public TestInfoAdapter(@NonNull Context context, int resource, @NonNull TestInfo[] data) {
+        public TestsInfoAdapter(@NonNull Context context, int resource, @NonNull ArrayList<TestInfo> data) {
             super(context, resource, data);
 
             this.inflater = LayoutInflater.from(context);
@@ -60,7 +70,7 @@ public class TestsHistoryFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return mData.length;
+            return mData.size();
         }
 
         @NonNull
@@ -69,45 +79,17 @@ public class TestsHistoryFragment extends Fragment {
             if (convertView == null) {
                 convertView = inflater.inflate(mResource, null);
             }
-            TestInfo data = mData[position];
+            TestInfo data = mData.get(position);
 
             TextView score = convertView.findViewById(R.id.test_info_score);
             TextView title = convertView.findViewById(R.id.test_info_title);
             ImageView image = convertView.findViewById(R.id.test_info_image);
 
-            title.setText(data.getTestType());
+            title.setText(data.getTitle());
             score.setText(data.getScore());
             image.setImageResource(R.drawable.ic_book);
 
             return convertView;
-        }
-
-
-    }
-
-
-    public static class TestInfo {
-
-        private String TestType;
-
-        private String Score;
-
-        public TestInfo(String testType, int score) {
-            TestType = testType;
-            Score = String.valueOf(score);
-        }
-
-        public TestInfo(String testType, String score) {
-            TestType = testType;
-            Score = score;
-        }
-
-        public String getTestType() {
-            return TestType;
-        }
-
-        public String getScore() {
-            return Score;
         }
     }
 }
