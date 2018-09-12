@@ -4,12 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.app.ActionBar;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.concurrent.ExecutionException;
 
@@ -19,6 +23,7 @@ import askdat.pyvela.main.MainActivity;
 
 public class RegistrationFragment extends Fragment {
 
+    Toolbar toolbar;
     Button SignUp;
     EditText email, password1, password2;
     DataBaseClass dataBaseClass;
@@ -41,6 +46,14 @@ public class RegistrationFragment extends Fragment {
         password2 = (EditText) root.findViewById(R.id.Password2);
         SignUp = (Button) root.findViewById(R.id.SignUp);
 
+        toolbar =(Toolbar) root.findViewById(R.id.toolbar);
+        FragmentActivity activity = (FragmentActivity) getActivity();
+        activity.setActionBar(toolbar);
+        ActionBar actionBar = activity.getActionBar();
+        if(actionBar!= null) {
+            actionBar.setTitle("Sign Up");
+
+        }
         SignUp.setOnClickListener(listener);
 
         return root;

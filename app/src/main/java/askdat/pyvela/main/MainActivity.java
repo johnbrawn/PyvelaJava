@@ -18,6 +18,8 @@ import java.util.Map;
 import askdat.pyvela.R;
 import askdat.pyvela.SharedPrefsClass;
 import askdat.pyvela.entrance.EntranceActivity;
+import askdat.pyvela.main.home.ChooseFragment;
+import askdat.pyvela.main.profile.ProfileFragment;
 import askdat.pyvela.tests.testhistory.TestsHistoryFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     ReplaceFragment(new ProfileFragment(),"ProfileFragment");
                     break;
                 case R.id.navigation_home:
-                    ReplaceFragment(new TestsChooseFragment(),"TestsChooseFragment");
+                    ReplaceFragment(new ChooseFragment(),"TestsChooseFragment");
                     break;
                 case R.id.navigation_history:
                     ReplaceFragment(new TestsHistoryFragment(),"TestsHistoryFragment()");

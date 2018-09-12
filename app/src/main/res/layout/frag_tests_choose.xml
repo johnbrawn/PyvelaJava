@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.TestsChooseFragment">
+    tools:context=".main.home.ChooseFragment">
 
     <GridView
         android:id="@+id/test_choose_grid"

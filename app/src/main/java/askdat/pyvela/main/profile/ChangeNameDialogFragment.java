@@ -1,4 +1,4 @@
-package askdat.pyvela.main;
+package askdat.pyvela.main.profile;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -35,8 +35,7 @@ public class ChangeNameDialogFragment extends DialogFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getDialog().setTitle("Nurlan");
         final SharedPrefsClass sharedPrefsClass = new SharedPrefsClass();
         View root = inflater.inflate(R.layout.dialog_profile_change_name, container, false);
@@ -73,7 +72,7 @@ public class ChangeNameDialogFragment extends DialogFragment {
 
     @Override
     public void onAttach(Context context) {
-        mOnChangeName = (onChangeName)getTargetFragment();
+       mOnChangeName = (onChangeName)getTargetFragment();
         super.onAttach(context);
     }
 }

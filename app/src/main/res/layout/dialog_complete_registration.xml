@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="#0086e2"
+        android:id="@+id/view">
+
+    </View>
+    <EditText
+        android:id="@+id/NumberPhone"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#0086e2"
+        android:ems="10"
+        android:hint="Номер телефона"
+        android:inputType="phone"
+        android:maxLength="18"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/IIN"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NumberPhone"
+        android:ems="10"
+        android:hint="ИИН"
+        android:inputType="number"
+        android:backgroundTint="#0086e2"
+        android:maxLength="12"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IIN"
+        android:background="#0086e2"
+        android:textColor="#FFFFFF"
+        android:text="Артқа" />
+
+    <Button
+        android:id="@+id/Start"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IIN"
+        android:layout_toRightOf="@+id/Back"
+        android:layout_marginLeft="12dp"
+        android:textColor="#FFFFFF"
+        android:background="#0086e2"
+        android:text="Бастау" />
+</RelativeLayout>

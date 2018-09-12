@@ -1,4 +1,4 @@
-package askdat.pyvela.main;
+package askdat.pyvela.main.profile;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.widget.Toast;
 import askdat.pyvela.R;
 import askdat.pyvela.SharedPrefsClass;
 import askdat.pyvela.data.local.ImageChangeData;
+import askdat.pyvela.main.MainActivity;
 
 
 public class ImageChangeFragment extends Fragment {

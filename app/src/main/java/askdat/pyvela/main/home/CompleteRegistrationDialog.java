@@ -1,11 +1,7 @@
-package askdat.pyvela.main;
+package askdat.pyvela.main.home;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.INotificationSideChannel;
-import android.telephony.PhoneNumberFormattingTextWatcher;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +14,6 @@ import java.util.regex.Pattern;
 
 import askdat.pyvela.R;
 import askdat.pyvela.SharedPrefsClass;
-import askdat.pyvela.data.remote.DataBaseClass;
 
 public class CompleteRegistrationDialog extends DialogFragment {
 
@@ -31,6 +26,8 @@ public class CompleteRegistrationDialog extends DialogFragment {
     Button Back;
     Button Start;
 
+    String PhoneText;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +37,8 @@ public class CompleteRegistrationDialog extends DialogFragment {
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup parent, final Bundle savedInstanceState) {
         super.onCreateView(inflater, parent, savedInstanceState);
-
-        View root = inflater.inflate(R.layout.complete_registration, parent, false);
+        getDialog().setTitle("Тіркелу");
+        View root = inflater.inflate(R.layout.dialog_complete_registration, parent, false);
 
         NumberPhone = (EditText) root.findViewById(R.id.NumberPhone);
         IIN = (EditText) root.findViewById(R.id.IIN);
@@ -56,25 +53,26 @@ public class CompleteRegistrationDialog extends DialogFragment {
         });
         sharedPrefsClass.appPrefs(getContext());
 
-
-
             Start.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    String PhoneText = NumberPhone.getText().toString();
+                    PhoneText = NumberPhone.getText().toString();
                     String IINText = IIN.getText().toString();
 
                     if ((validPhone(PhoneText) == false) && IINText.length() != 12) {
                         Toast.makeText(getActivity(), "Pattern NO", Toast.LENGTH_LONG).show();
                     }
-                    else Toast.makeText(getActivity(), "Yes", Toast.LENGTH_LONG).show();
+                    else {
+                        Toast.makeText(getActivity(), "Yes", Toast.LENGTH_LONG).show();
 
-                    sharedPrefsClass.saveStr("PhoneNumber", PhoneText);
-                    sharedPrefsClass.saveStr("IIN", IINText);
-                    dismiss();
+                        sharedPrefsClass.saveStr("PhoneNumber", PhoneText);
+                        sharedPrefsClass.saveStr("IIN", IINText);
+                        dismiss();
+                    }
                 }
             });
+
             return root;
         }
 

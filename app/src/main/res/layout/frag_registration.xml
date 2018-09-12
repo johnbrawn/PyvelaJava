@@ -4,69 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/registration">
+    android:background="@color/gray"
+    android:minHeight="@dimen/toolbar_height">
     <!-- Text Fields -->
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#008fe9"/>
+
     <LinearLayout
         android:id="@+id/reg_fields"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="391dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="#C20D7272"
+        android:layout_marginTop="73dp"
+        android:background="@color/white"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/email"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginEnd="53sp"
-            android:layout_marginStart="53sp"
-            android:layout_marginTop="160dp"
-            android:background="@drawable/edit_text_bg"
-            android:hint="@string/authLoginHint"
-            android:inputType="text"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp"
-            android:textColorHint="#AAAAAA" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/Password1"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginEnd="53sp"
-            android:layout_marginStart="53sp"
-            android:background="@drawable/edit_text_bg"
-            android:hint="@string/authPasswordHint"
-            android:inputType="textPassword"
-            android:paddingStart="15dp"
-            android:layout_marginBottom="12dp"
-            android:textColorHint="#AAAAAA" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="290dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint="@string/authLoginHint"
+                android:inputType="text"
+                android:paddingStart="5dp"
+                android:textColorHint="#AAAAAA"
+                android:textSize="15dp" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/Password2"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout2"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginEnd="53sp"
-            android:layout_marginStart="53sp"
-            android:background="@drawable/edit_text_bg"
-            android:hint="@string/regRePasswordText"
-            android:inputType="textPassword"
-            android:paddingStart="15dp"
-            android:textColorHint="#AAAAAA">
-        </EditText>
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/Password1"
+                android:layout_width="290dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint="@string/authPasswordHint"
+                android:inputType="textPassword"
+                android:paddingStart="5dp"
+                android:textColorHint="#AAAAAA"
+                android:textSize="15dp"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/Password2"
+                android:layout_width="290dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint="@string/regRePasswordText"
+                android:inputType="textPassword"
+                android:paddingStart="5dp"
+                android:textColorHint="#AAAAAA"
+                android:textSize="15dp"></EditText>
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/SignUp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="51dp"
-            android:layout_marginStart="51dp"
+            android:layout_width="290dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
             android:layout_marginTop="21dp"
+            android:background="#008fe9"
             android:clickable="true"
             android:text="@string/authSingUp"
-            android:textColor="#0D7272" />
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="8dp"
+            android:text="FORGOT YOUR PASSWORD?"
+            android:textColor="#00b7e9"
+            android:textStyle="bold|italic" />
     </LinearLayout>
     <!-- Logo -->
 </RelativeLayout>
