@@ -21,6 +21,7 @@ public final class ImageChangeData {
                 R.drawable.serow_girl_with_peaches,
                 R.drawable.the_last_day_of_pompeii,
                 R.drawable.the_ninth_wave,
+                R.drawable.odrie_hepbern
         };
     }
 }

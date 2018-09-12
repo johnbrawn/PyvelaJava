@@ -3,10 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg_entrance">
+    android:background="@drawable/bg_enterance_profile">
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pyvela_logo_2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/auth_logo"/>
 
     <LinearLayout
         android:id="@+id/auth_fields"
@@ -14,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/auth_logo"
+        android:layout_marginTop="40dp"
         >
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_login"
@@ -81,15 +87,15 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_gravity="center" />
-        <Button
+        <TextView
             android:id="@+id/auth_sign_up"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:textColor="#FFFFFF"
-            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_height="30dp"
             android:layout_width="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/authSingUp"
             android:gravity="center"
-            />
+            android:clickable="true"
+            android:focusable="true" />
     </LinearLayout>
 </RelativeLayout>

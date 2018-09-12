@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -23,7 +24,8 @@ import askdat.pyvela.main.MainActivity;
 public class AuthorizationFragment extends Fragment {
     private static final String TAG = "myLogs";
     private EntranceActivity Parent;
-    private Button signIn, signUp,forgot;
+    private Button signIn, forgot;
+    private TextView signUp;
     private EditText login, pass;
     private DataBaseClass dataBaseClass;
     private SharedPrefsClass sharedPrefsClass;

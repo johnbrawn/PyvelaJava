@@ -12,20 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
-        <activity android:name=".entrance.SplashActivity">
+        <activity
+            android:name=".entrance.SplashActivity"
+            android:theme="@style/MyTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".entrance.EntranceActivity" />
-
+        <activity android:name=".entrance.EntranceActivity" />
         <activity
             android:name=".main.MainActivity"
-            android:label="@string/title_activity_act_main"/>
+            android:label="@string/title_activity_act_main" />
         <activity android:name=".tests.teststart.TestStartActivity" />
+        <activity android:name=".main.Main2Activity"></activity>
     </application>
+
 </manifest>

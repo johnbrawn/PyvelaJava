@@ -1,12 +1,14 @@
 package askdat.pyvela.main.profile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
     private DialogFragment dialogFragment;
     private TextView name;
     private Bundle bundle;
+    private Button edit;
 
     @Override
     public void onAttach(Context context) {
@@ -50,6 +53,7 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
         View root=inflater.inflate(R.layout.frag_profile,container,false);
         profileImage = root.findViewById(R.id.frag_profile_image);
         name = root.findViewById(R.id.frag_profile_name);
+        edit = root.findViewById(R.id.frag_edit);
         LinearLayout linearLayout = root.findViewById(R.id.frag_profile_linear);
 
         sharedPrefsClass.appPrefs(getActivity());
@@ -74,6 +78,13 @@ public class  ProfileFragment extends Fragment implements ChangeNameDialogFragme
             @Override
             public void onClick(View v) {
                 dialogFragment.show(getFragmentManager(),"dialog");
+            }
+        });
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Main2Activity.class);
+                startActivity(intent);
             }
         });
         return root;

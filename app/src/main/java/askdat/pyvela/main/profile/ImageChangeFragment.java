@@ -84,7 +84,7 @@ public class ImageChangeFragment extends Fragment {
         }
 
         public int getCount() {
-            return 4;
+            return 5;
         }
 
         public Object getItem(int position) {

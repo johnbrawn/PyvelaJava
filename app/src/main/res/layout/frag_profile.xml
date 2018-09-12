@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_enterance_profile"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <LinearLayout
         android:id="@+id/profile_content"
@@ -11,7 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:background="@drawable/soviet_union"
         >
         <!--
         <FrameLayout
@@ -34,16 +34,17 @@
 
         </FrameLayout>
         -->
-        <de.hdodenhof.circleimageview.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/frag_profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/the_last_day_of_pompeii"
             app:civ_border_width="2dp"
             app:civ_border_color="#FF000000"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:layout_marginTop="25dp"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -197,14 +198,22 @@
             android:textSize="17sp"
             android:layout_marginBottom="13dp"/>
     </GridLayout>
-    <Button
-        android:id="@+id/frag_edit"
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="51dp"
-        android:text="@string/profEdit"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/bg_entrance_rectangle"/>
+        android:layout_height="match_parent"
+        android:background="#ff1500">
+
+        <Button
+            android:id="@+id/frag_edit"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginEnd="51dp"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_entrance_rectangle"
+            android:text="@string/profEdit"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 </LinearLayout>
