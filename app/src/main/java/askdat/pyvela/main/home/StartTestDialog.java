@@ -13,7 +13,7 @@ public class StartTestDialog extends DialogFragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup parent, final Bundle savedInstanceState) {
         super.onCreateView(inflater, parent, savedInstanceState);
         getDialog().setTitle("Are you sure");
-        View root = inflater.inflate(R.layout.dialog_complete_registration, parent, false);
+        View root = inflater.inflate(R.layout.dialog_start_test, parent, false);
         return root;
     }
 }

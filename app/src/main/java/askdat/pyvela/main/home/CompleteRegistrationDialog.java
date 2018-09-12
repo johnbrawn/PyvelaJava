@@ -37,6 +37,7 @@ public class CompleteRegistrationDialog extends DialogFragment {
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup parent, final Bundle savedInstanceState) {
         super.onCreateView(inflater, parent, savedInstanceState);
+
         getDialog().setTitle("Тіркелу");
         View root = inflater.inflate(R.layout.dialog_complete_registration, parent, false);
 

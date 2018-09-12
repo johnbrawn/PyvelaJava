@@ -2,6 +2,7 @@ package askdat.pyvela.main.home;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,6 +81,8 @@ public class EntFragment extends Fragment {
                 count += 1;
             }
         }
+
+        registrationDialog.setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomDialog);
         if (count == 1){
             Toast.makeText(getContext(), "1", Toast.LENGTH_LONG).show();
             //if (sharedPrefsClass.sharedPrefs.getString("PhoneNumber", "asda") == "asda") {

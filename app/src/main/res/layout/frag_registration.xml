@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="#EEEEEE"
     android:minHeight="@dimen/toolbar_height">
     <!-- Text Fields -->
 
     <android.widget.Toolbar
+        android:titleTextColor="#FFFFFF"
+        android:layout_alignParentTop="true"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#008fe9"/>
 
     <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="40dp"
         android:id="@+id/reg_fields"
         android:layout_width="match_parent"
-        android:layout_height="391dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="73dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center"
+        android:elevation="5dp"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
@@ -32,8 +36,8 @@
 
             <EditText
                 android:id="@+id/email"
-                android:layout_width="290dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="@string/authLoginHint"
                 android:inputType="text"
@@ -49,8 +53,8 @@
 
             <EditText
                 android:id="@+id/Password1"
-                android:layout_width="290dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="@string/authPasswordHint"
                 android:inputType="textPassword"
@@ -68,37 +72,29 @@
 
             <EditText
                 android:id="@+id/Password2"
-                android:layout_width="290dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="@string/regRePasswordText"
                 android:inputType="textPassword"
                 android:paddingStart="5dp"
                 android:textColorHint="#AAAAAA"
-                android:textSize="15dp"></EditText>
+                android:textSize="15dp">
+            </EditText>
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/SignUp"
-            android:layout_width="290dp"
-            android:layout_height="38dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="21dp"
             android:background="#008fe9"
             android:clickable="true"
+            android:focusable="true"
             android:text="@string/authSingUp"
             android:textColor="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="8dp"
-            android:text="FORGOT YOUR PASSWORD?"
-            android:textColor="#00b7e9"
-            android:textStyle="bold|italic" />
     </LinearLayout>
-    <!-- Logo -->
 </RelativeLayout>
 

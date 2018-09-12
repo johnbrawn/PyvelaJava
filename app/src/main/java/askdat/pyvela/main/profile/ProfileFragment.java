@@ -16,6 +16,7 @@ import android.widget.TextView;
 import askdat.pyvela.SharedPrefsClass;
 import askdat.pyvela.data.local.ImageChangeData;
 import askdat.pyvela.R;
+import askdat.pyvela.main.Main2Activity;
 import askdat.pyvela.main.MainActivity;
 
 public class  ProfileFragment extends Fragment implements ChangeNameDialogFragment.onChangeName{
