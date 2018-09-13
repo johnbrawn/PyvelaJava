@@ -4,13 +4,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,8 +21,11 @@ import askdat.pyvela.R;
 
 public class TestsHistoryFragment extends Fragment implements TestsHistoryContract.View{
 
-    ListView mListView;
-    Presenter mPresenter;
+    private ListView mListView;
+
+    private Presenter mPresenter;
+
+    private View mRoot;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,9 +33,9 @@ public class TestsHistoryFragment extends Fragment implements TestsHistoryContra
 
         mPresenter = new TestsHistoryPresenter(this);
 
-        View root =  inflater.inflate(R.layout.frag_tests_history, container, false);
-        mListView = root.findViewById(R.id.tests_history_list);
-        return root;
+        mRoot =  inflater.inflate(R.layout.frag_tests_history, container, false);
+        mListView = mRoot.findViewById(R.id.tests_history_list);
+        return mRoot;
     }
 
     @Override
@@ -42,8 +45,14 @@ public class TestsHistoryFragment extends Fragment implements TestsHistoryContra
     }
 
     @Override
-    public void showList(ArrayList<TestInfo> items) {
+    public void showList(ArrayList<TestHistoryData> items) {
         mListView.setAdapter(new TestsInfoAdapter(getContext(), R.layout.temp_test_info, items));
+    }
+
+    @Override
+    public void showVoid(String message) {
+        mListView.setVisibility(View.INVISIBLE);
+        Snackbar.make(mRoot, message, Snackbar.LENGTH_LONG).show();
     }
 
     @Override
@@ -52,15 +61,15 @@ public class TestsHistoryFragment extends Fragment implements TestsHistoryContra
         super.onDestroy();
     }
 
-    public static class TestsInfoAdapter extends ArrayAdapter<TestInfo> {
+    public static class TestsInfoAdapter extends ArrayAdapter<TestHistoryData> {
 
-        private ArrayList<TestInfo> mData;
+        private ArrayList<TestHistoryData> mData;
 
         private int mResource;
 
         private LayoutInflater inflater;
 
-        public TestsInfoAdapter(@NonNull Context context, int resource, @NonNull ArrayList<TestInfo> data) {
+        public TestsInfoAdapter(@NonNull Context context, int resource, @NonNull ArrayList<TestHistoryData> data) {
             super(context, resource, data);
 
             this.inflater = LayoutInflater.from(context);
@@ -79,15 +88,16 @@ public class TestsHistoryFragment extends Fragment implements TestsHistoryContra
             if (convertView == null) {
                 convertView = inflater.inflate(mResource, null);
             }
-            TestInfo data = mData.get(position);
 
+            TestHistoryData data = mData.get(position);
+
+            TextView indicator = convertView.findViewById(R.id.test_info_indicator_text);
             TextView score = convertView.findViewById(R.id.test_info_score);
             TextView title = convertView.findViewById(R.id.test_info_title);
-            ImageView image = convertView.findViewById(R.id.test_info_image);
 
+            indicator.setText(data.getIndicator());
             title.setText(data.getTitle());
             score.setText(data.getScore());
-            image.setImageResource(R.drawable.ic_book);
 
             return convertView;
         }

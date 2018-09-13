@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tests.testhistory.TestsHistoryFragment">
+    tools:context=".tests.testhistory.TestsHistoryFragment"
+    android:paddingTop="10dp">
 
     <ListView
         android:id="@+id/tests_history_list"

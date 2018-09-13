@@ -1,6 +1,7 @@
 package askdat.pyvela.tests.testhistory;
 
-import askdat.pyvela.tests.testhistory.TestsHistoryInteractor.OnDataLoadedListener;
+import askdat.pyvela.data.remote.TestStartData;
+import askdat.pyvela.tests.testhistory.TestsHistoryInteractor.Mediator;
 import java.util.ArrayList;
 
 public class TestsHistoryPresenter implements TestsHistoryContract.Presenter {
@@ -10,23 +11,32 @@ public class TestsHistoryPresenter implements TestsHistoryContract.Presenter {
 
     public TestsHistoryPresenter(TestsHistoryContract.View view) {
         mView = view;
-        mInteractor = new TestsHistoryInteractor(listener);
+        mInteractor = new TestsHistoryInteractor(new Mediator() {
+
+            @Override
+            public void onDataLoaded(ArrayList<TestHistoryData> data) {
+                mView.showList(data);
+            }
+
+            @Override
+            public void onDataAvailable() {
+                mInteractor.getItems();
+            }
+
+            @Override
+            public void onDataNotAvailable() {
+                mView.showVoid("No completed tests");
+            }
+        });
     }
 
     @Override
     public void OnResume() {
-        mInteractor.getItems();
+        mInteractor.isDataAvailable();
     }
 
     @Override
     public void OnDestroy() {
         mView = null;
     }
-
-    OnDataLoadedListener listener = new OnDataLoadedListener() {
-        @Override
-        public void onDataLoaded(ArrayList<TestInfo> data) {
-            mView.showList(data);
-        }
-    };
 }

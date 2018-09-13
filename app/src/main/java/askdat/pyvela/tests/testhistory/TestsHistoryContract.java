@@ -6,7 +6,9 @@ public interface TestsHistoryContract {
 
     interface View {
 
-        void showList(ArrayList<TestInfo> items);
+        void showList(ArrayList<TestHistoryData> items);
+
+        void showVoid(String message);
     }
 
     interface Presenter {
