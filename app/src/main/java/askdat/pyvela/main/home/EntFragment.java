@@ -1,5 +1,6 @@
 package askdat.pyvela.main.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 import askdat.pyvela.R;
 import askdat.pyvela.SharedPrefsClass;
+import askdat.pyvela.tests.teststart.TestStartActivity;
 
 public class EntFragment extends Fragment {
 
@@ -46,7 +48,10 @@ public class EntFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Checked();
+                Intent intent = new Intent(getActivity(), TestStartActivity.class);
+                startActivity(intent);
+
+                //Checked();
             }
         });
 

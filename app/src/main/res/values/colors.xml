@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2c3e50</color>
-    <color name="colorPrimaryDark">#1B3147</color>
-    <color name="colorAccent">#3498db</color>
+    <color name="colorPrimary">#364866</color>
+    <color name="colorPrimaryDark">#364866</color>
+    <color name="colorAccent">#364866</color>
 
     <color name="white">#FFFFFF</color>
     <color name="silver_lite">#D7DBDD</color>
@@ -13,7 +13,7 @@
 
     <!--Authorization -->
 
-    <color name="colorAuthPrimary">#0E4F8A</color>
+    <color name="colorAuthPrimary">#364866</color>
     <color name="colorAuthAccent">#FFFFFF</color>
 
     <color name="colorAuthBackground">@color/colorAuthPrimary</color>

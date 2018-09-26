@@ -12,6 +12,8 @@
         android:padding="10dp">
 
         <TextView
+            android:textColor="#333333"
+            android:textSize="20sp"
             android:id="@+id/test_start_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

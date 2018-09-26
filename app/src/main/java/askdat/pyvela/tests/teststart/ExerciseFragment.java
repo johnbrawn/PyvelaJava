@@ -1,5 +1,6 @@
 package askdat.pyvela.tests.teststart;
 
+import android.animation.ObjectAnimator;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.support.v4.app.Fragment;
@@ -7,9 +8,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
@@ -17,9 +20,13 @@ import android.widget.TextView;
 import askdat.pyvela.R;
 import askdat.pyvela.tests.Args;
 
-public class ExerciseFragment extends Fragment {
+import android.view.ViewGroup.LayoutParams.*;
+
+public class ExerciseFragment extends Fragment{
 
     public static String ARG_EXERCISE_POS = "EP";
+
+    private View mSwipeLayout;
 
     private int mPosition;
 
@@ -63,10 +70,11 @@ public class ExerciseFragment extends Fragment {
 
         mInteractor.addFragment(this);
 
-        View root =  inflater.inflate(R.layout.frag_exercise, container, false);
+        FrameLayout root = (FrameLayout)inflater.inflate(R.layout.frag_exercise_back, container, false);
+        mSwipeLayout = inflater.inflate(R.layout.frag_exercise, container, false);
 
-        mQuestion = root.findViewById(R.id.test_start_question);
-        LinearLayout answersLayout = root.findViewById(R.id.test_start_answers);
+        mQuestion = mSwipeLayout.findViewById(R.id.test_start_question);
+        LinearLayout answersLayout = mSwipeLayout.findViewById(R.id.test_start_answers);
 
         mAnswers = new Button[5];
 
@@ -76,6 +84,8 @@ public class ExerciseFragment extends Fragment {
             answer.setOnClickListener(OnAnswerClick);
             answersLayout.addView(answer);
         }
+
+        root.addView(mSwipeLayout, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         return root;
     }
 
@@ -112,6 +122,10 @@ public class ExerciseFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
+
+//        ObjectAnimator animation = ObjectAnimator.ofFloat(mSwipeLayout, "translationY", 500f);
+//        animation.setDuration(1000);
+//        animation.start();
 
         int answerPos = getAnswerPos(view);
 

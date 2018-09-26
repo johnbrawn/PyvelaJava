@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import askdat.pyvela.tests.Args;
+import static askdat.pyvela.tests.Args.*;
+
 
 import askdat.pyvela.tests.teststart.Connector.*;
 
@@ -51,9 +52,9 @@ public class Interactor implements ActivityListener {
                 int id = subjectsId[i];
 
                 if (isCompulsory(id)) {
-                    mExercises.add(newExercisesArray(SIMPLE_EXERCISES_AMOUNT));
+                    mExercises.add(newExercisesArray(SIMPLE_EXERCISES_AMOUNT, id));
                 } else if (isElective(id)) {
-                    mExercises.add(newExercisesArray(SIMPLE_EXERCISES_AMOUNT + COMPLICATED_EXERCISES_AMOUNT));
+                    mExercises.add(newExercisesArray(SIMPLE_EXERCISES_AMOUNT + COMPLICATED_EXERCISES_AMOUNT, id));
                 } else {
                     throw new RuntimeException("Interactor: subjectsId[" + String.valueOf(id) + "] is invalid");
                 }
@@ -71,8 +72,9 @@ public class Interactor implements ActivityListener {
 
         String[] subjects = new String[mSubjectsId.length];
         for (int i = 0; i < mSubjectsId.length; i++) {
-            subjects[i] = Args.SUBJECTS[i];
+            subjects[i] = SUBJECTS[i];
         }
+        subjects[0] = "Математикалық сауаттылық";
         return subjects;
     }
 
@@ -116,10 +118,56 @@ public class Interactor implements ActivityListener {
         return 3 <= index & index <= 10;
     }
 
-    private Exercise[] newExercisesArray(int length) {
+    private Exercise[] newExercisesArray(int length, int id) {
+
         Exercise[] exercises = new Exercise[length];
-        for (int i = 0; i < exercises.length; i++) {
-            exercises[i] = new Exercise(getData());
+
+        if (id == MATH_LITERACY) {
+            exercises[0] = new Exercise("Сандар белгілі бір заңдылық бойынша орналасқан." +
+                "Сұрақ белгісінің орнындағы санды табыңыз: 289; 169; 109; 79; 64; ?",
+                "50,5", "53,5", "48", "65,5", "56,5");
+
+            exercises[1] = new Exercise("Құты мен стаканның жалпы сыйымдылығы құмыраның сыйымдылығына тең. " +
+                "ұтының сыйымдылығы стакан мен кесенің  жалпы сыйымдылығына тең." +
+                "Үш кесенің сыйымдылығы екі құмыраның сыйымдылығына тең. Кесенің сыйымдылығын табыңыз.",
+                "7 стакан",
+                "5 стакан",
+                "3 стакан",
+                "4 стакан",
+                "6 стакан");
+
+            exercises[2] = new Exercise("420 саны 5:7:9 тура пропорция бойынша бөлінген. Ең үлкен бөлігінен ең кіші бөлігінің айырмасын табыңыз.",
+                "80",
+                "110",
+                "100",
+                "70",
+                "90");
+
+            exercises[3] = new Exercise("Ағаштың берілген массасының 20%-ынан қағаз дайындалады. Оқушының бір дәптері 30 г, ал кітап одан 16 есе ауыр. Сыныпта 30 оқушының әрқайсысына 1 дәптерден және 1 кітаптан дайындау үшін барлығы неше кг ағаш қажет?",
+                "67,2 кг",
+                "76,5 кг",
+                "75,2 кг",
+                "70 кг",
+                "70,8 кг");
+
+            exercises[4] = new Exercise("Квадрат пен теңқабырғалы үшбұрыштың әрқайсысы бірдей n дөңгелектермен толтырылған (көршілес дөңгелектер өзара жанасқан). Егер үшбұрыштың ішінде 625 дөңгелек бар болса, онда квадраттың бір ғана қабырғасымен неше дөңгелек жанасып тұрғанын анықтаңыз.",
+                "24",
+                "25",
+                "50",
+                "23",
+                "45");
+
+            for (int i = 5; i < exercises.length; i++) {
+                exercises[i] = new Exercise(getData());
+            }
+        }
+        else if (id == READING_LITERACY) {
+
+        }
+        else {
+            for (int i = 0; i < exercises.length; i++) {
+                exercises[i] = new Exercise(getData());
+            }
         }
         return exercises;
     }
@@ -133,12 +181,12 @@ public class Interactor implements ActivityListener {
 
     public void addFragment(ExerciseFragment fragment) {
         mFragmentsSpotter.add(fragment);
-        Log.d(Args.TAG, "Fragment Added: " + fragment.getPosition());
+        Log.d(TAG, "Fragment Added: " + fragment.getPosition());
     }
 
     public void removeFragment(ExerciseFragment fragment) {
         mFragmentsSpotter.remove(fragment);
-        Log.d(Args.TAG, "Fragment Removed: " + fragment.getPosition());
+        Log.d(TAG, "Fragment Removed: " + fragment.getPosition());
     }
 
     private ExerciseFragment[] getFragments() {

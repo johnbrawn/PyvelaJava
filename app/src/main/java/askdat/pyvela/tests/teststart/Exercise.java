@@ -16,6 +16,10 @@ public class Exercise {
         mSelects = new boolean[data.length - Args.QUESTION_AMOUNT];
     }
 
+    public Exercise(String q, String a1, String a2, String a3, String a4, String a5) {
+        this(new String[] {q, a1, a2, a3, a4, a5});
+    }
+
     public String[] getExercise() {
         return mData;
     }
